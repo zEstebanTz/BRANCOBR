@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca de Nosotros - BRANCO Motobombas</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--naranja:#ff6600;--negro:#111111;--gris:#f7f5f2;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hidden;}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;background:rgba(17,17,17,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--naranja);}
+.nav-lang{display:flex;gap:8px;}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.25);padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,0.7);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
+.lang-btn:hover,.lang-btn.active{border-color:var(--naranja);color:var(--naranja);}
+
+/* PAGE HEADER */
+.page-header{position:relative;background:var(--negro);padding:120px 60px 80px;overflow:hidden;}
+.page-header::before{content:'BRANCO';font-family:'Oswald',sans-serif;font-size:150px;font-weight:700;color:rgba(255,255,255,0.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:10px;white-space:nowrap;}
+.ph-img{position:absolute;inset:0;background:url('imagen/reemplazar1.jpg') center/cover;opacity:0.12;}
+.ph-inner{position:relative;}
+.ph-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
+.ph-title{font-family:'Oswald',sans-serif;font-size:42px;font-weight:700;color:#fff;text-transform:uppercase;}
+.ph-sub{font-size:15px;color:rgba(255,255,255,0.45);margin-top:12px;max-width:600px;line-height:1.7;}
+.ph-bread{margin-top:16px;font-size:12px;color:rgba(255,255,255,0.3);display:flex;align-items:center;gap:8px;}
+.ph-bread a{color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+.ph-bread a:hover{color:var(--naranja);}
+.ph-bread span{color:rgba(255,255,255,0.15);}
+
+/* STATS BAND */
+.stats-band{background:var(--naranja);display:grid;grid-template-columns:repeat(4,1fr);}
+.sb-item{padding:32px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.2);}
+.sb-item:last-child{border:none;}
+.sb-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:#fff;display:block;}
+.sb-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-top:4px;}
+
+/* HISTORIA */
+.historia-section{padding:90px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hs-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:12px;}
+.hs-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;letter-spacing:-0.5px;color:var(--negro);margin-bottom:22px;}
+.hs-text p{font-size:14px;color:#666;line-height:1.9;margin-bottom:16px;}
+.hs-visual{position:relative;}
+.hs-img-placeholder{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#0d1f35,#1a3a5c);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hs-img-placeholder::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,102,0,0.1) 1px,transparent 0);background-size:20px 20px;}
+.hs-img-placeholder-inner{position:relative;text-align:center;color:#fff;z-index:2;}
+.hip-flag{font-size:52px;margin-bottom:8px;}
+.hip-txt{font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+.hs-badge{position:absolute;bottom:-18px;right:-18px;background:var(--naranja);color:#fff;padding:20px 24px;text-align:center;z-index:3;}
+.hs-badge-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;display:block;}
+.hs-badge-txt{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
+
+/* MISION VISION */
+.mv-section{background:var(--negro);padding:90px 60px;}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#222;margin-top:52px;}
+.mv-card{background:var(--negro);padding:50px 44px;}
+.mv-icon{font-size:28px;margin-bottom:22px;}
+.mv-title{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:0.5px;margin-bottom:16px;}
+.mv-title span{color:var(--naranja);}
+.mv-text{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.9;}
+
+/* VALUES */
+.values-section{padding:90px 60px;background:var(--gris);}
+.sec-head{text-align:center;margin-bottom:56px;}
+.sec-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
+.sec-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;letter-spacing:-0.5px;color:var(--negro);text-transform:uppercase;}
+.sec-desc{font-size:14px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.val-card{background:#fff;padding:36px 30px;position:relative;overflow:hidden;transition:transform 0.3s;}
+.val-card:hover{transform:translateY(-4px);}
+.val-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--naranja);}
+.val-ico{font-size:28px;margin-bottom:16px;}
+.val-title{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;text-transform:uppercase;color:var(--negro);letter-spacing:1px;margin-bottom:10px;}
+.val-text{font-size:13px;color:#888;line-height:1.7;}
+
+/* TECH / TECH */
+.tech-section{padding:90px 60px;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.tech-visual{background:var(--negro);padding:48px;position:relative;overflow:hidden;}
+.tech-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,102,0,0.07) 1px,transparent 0);background-size:18px 18px;}
+.tv-inner{position:relative;text-align:center;color:#fff;}
+.tv-flag{font-size:64px;margin-bottom:16px;}
+.tv-title{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;}
+.tv-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.tv-items{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+.tv-item{display:flex;align-items:center;gap:12px;text-align:left;}
+.tv-dot{width:6px;height:6px;background:var(--naranja);flex-shrink:0;}
+.tv-text{font-size:13px;color:rgba(255,255,255,0.5);}
+.tech-text h2{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;color:var(--negro);margin:10px 0 18px;}
+.tech-text p{font-size:14px;color:#666;line-height:1.8;margin-bottom:14px;}
+.tech-link{display:inline-block;padding:13px 28px;background:var(--naranja);color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:8px;transition:background 0.2s;}
+.tech-link:hover{background:#e05500;}
+
+/* CTA BAND */
+.cta-band{background:var(--naranja);padding:72px 60px;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'BRANCO';font-family:'Oswald',sans-serif;font-size:140px;font-weight:700;color:rgba(255,255,255,0.07);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:10px;white-space:nowrap;}
+.cta-band h2{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:#fff;text-transform:uppercase;position:relative;margin-bottom:10px;}
+.cta-band p{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:28px;position:relative;}
+.btn-white{display:inline-block;padding:14px 36px;background:#fff;color:var(--naranja);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:all 0.2s;position:relative;}
+.btn-white:hover{background:var(--negro);color:#fff;}
+
+/* FOOTER */
+.footer{background:#0d0d0d;padding:50px 60px 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.f-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:5px;margin-bottom:12px;}
+.f-desc{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.8;}
+.f-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.f-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.f-list a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.f-list a:hover{color:var(--naranja);}
+.f-contact-d{font-size:13px;color:rgba(255,255,255,0.3);line-height:2;}
+.f-contact-d a{color:var(--naranja);text-decoration:none;}
+.footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);text-align:center;}
+.footer-bot span{color:var(--naranja);}
+
+@media(max-width:900px){
+  .nav{padding:0 24px;}
+  .page-header{padding:100px 24px 56px;}
+  .stats-band{grid-template-columns:1fr 1fr;}
+  .historia-section,.mv-grid,.values-grid,.tech-grid{grid-template-columns:1fr;gap:40px;}
+  .values-section,.historia-section,.mv-section,.tech-section{padding:60px 24px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .hs-badge{position:static;margin-top:16px;display:inline-block;}
+}
+@media(max-width:500px){
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">BRANCO</a>
+  <div class="nav-links">
+    <a href="index.html" id="n-inicio">Inicio</a>
+    <a href="tienda.html" id="n-tienda">Tienda</a>
+    <a href="contactos.html" id="n-contacto">Contactos</a>
+    <a href="acercade.html" class="active" id="n-acerca">Acerca de nosotros</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn active" onclick="setLang('es')">🇪🇸 ES</button>
+    <button class="lang-btn" onclick="setLang('pt')">🇧🇷 PT</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="ph-img"></div>
+  <div class="ph-inner">
+    <div class="ph-tag" id="ph-tag">Nuestra historia</div>
+    <h1 class="ph-title" id="ph-title">Acerca de Nosotros</h1>
+    <p class="ph-sub" id="ph-sub">Distribuidores oficiales de tecnología brasilera BRANCO. Equipos robustos diseñados para la máxima eficiencia agrícola e industrial.</p>
+    <div class="ph-bread">
+      <a href="index.html" id="pb-home">Inicio</a>
+      <span>/</span>
+      <span id="pb-cur">Acerca de nosotros</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats-band">
+  <div class="sb-item"><span class="sb-num">100%</span><div class="sb-label" id="sbl2">Calidad Brasilera</div></div>
+  <div class="sb-item"><span class="sb-num">BRANCO</span><div class="sb-label" id="sbl3">Distribuidores Oficiales</div></div>
+  <div class="sb-item"><span class="sb-num">A+</span><div class="sb-label" id="sbl1">Rendimiento</div></div>
+  <div class="sb-item"><span class="sb-num">∞</span><div class="sb-label" id="sbl4">Compromiso</div></div>
+</div>
+
+<section class="historia-section">
+  <div class="hs-text">
+    <div class="hs-label" id="hs-tag">Tecnología de Vanguardia</div>
+    <h2 class="hs-title" id="hs-title">Motobombas BRANCO</h2>
+    <div>
+      <p id="hp1">Contamos con motobombas de caudal autocebante a gasolina de excelente desempeño, diseñadas específicamente para labores de transporte de agua en aplicaciones de riego por trasiego o labores agrícolas en general, abastecimiento de agua y drenajes.</p>
+      <p id="hp2">Estas motobombas son ideales para mover grandes volúmenes de agua en relación con su tamaño y potencia, garantizando una operatividad constante incluso en las condiciones más exigentes del sector agroindustrial.</p>
+      <p id="hp3">Como distribuidores oficiales, nuestra misión es proveer equipos que combinen la ingeniería brasilera de precisión con la durabilidad necesaria para el trabajo diario, asegurando un soporte técnico de excelencia.</p>
+    </div>
+  </div>
+  <div class="hs-visual">
+    <div class="hs-img-placeholder">
+      <div class="hs-img-placeholder-inner">
+        <div class="hip-flag">🇧🇷</div>
+        <div class="hip-txt" id="hv-txt">Tecnología Brasilera</div>
+      </div>
+      <img src="imagen/reemplazar4.png" alt="BRANCO" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+    </div>
+    <div class="hs-badge">
+      <span class="hs-badge-num">100%</span>
+      <div class="hs-badge-txt" id="hb-txt">Original</div>
+    </div>
+  </div>
+</section>
+
+<section class="mv-section">
+  <div class="sec-head">
+    <div class="sec-tag" id="mv-tag">Nuestros principios</div>
+    <h2 class="sec-title" style="color:#fff;" id="mv-title">Misión y Visión</h2>
+  </div>
+  <div class="mv-grid">
+    <div class="mv-card">
+      <div class="mv-icon">🎯</div>
+      <h3 class="mv-title"><span id="m-label">Misión</span></h3>
+      <p class="mv-text" id="m-text">Proveer soluciones de bombeo de alta calidad respaldadas por tecnología brasilera BRANCO, ofreciendo equipos confiables, duraderos y de alto rendimiento, junto con asesoría experta y un servicio de excelencia.</p>
+    </div>
+    <div class="mv-card">
+      <div class="mv-icon">🔭</div>
+      <h3 class="mv-title"><span id="v-label">Visión</span></h3>
+      <p class="mv-text" id="v-text">Consolidarnos como el distribuidor de referencia para equipos de bombeo brasileros, reconocidos por nuestra integridad, calidad técnica y compromiso inquebrantable con el éxito de nuestros clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="sec-head">
+    <div class="sec-tag" id="val-tag">Lo que nos define</div>
+    <h2 class="sec-title" id="val-title">Nuestros Valores</h2>
+    <p class="sec-desc" id="val-desc">Los principios que guían cada decisión que tomamos.</p>
+  </div>
+  <div class="values-grid">
+    <div class="val-card">
+      <div class="val-ico">✓</div>
+      <div class="val-title" id="vt1">Calidad</div>
+      <p class="val-text" id="vd1">Solo trabajamos con equipos que cumplen los más altos estándares de fabricación brasilera. Calidad que se nota en el campo.</p>
+    </div>
+    <div class="val-card">
+      <div class="val-ico">🤝</div>
+      <div class="val-title" id="vt2">Compromiso</div>
+      <p class="val-text" id="vd2">Estamos dedicados a la satisfacción total, brindando equipos que nunca se detienen cuando el trabajo es crítico.</p>
+    </div>
+    <div class="val-card">
+      <div class="val-ico">🏆</div>
+      <div class="val-title" id="vt3">Rendimiento</div>
+      <p class="val-text" id="vd3">Nuestras motobombas ofrecen una relación potencia-tamaño líder en el mercado para un transporte de agua eficiente.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tech-section">
+  <div class="tech-grid">
+    <div class="tech-visual">
+      <div class="tv-inner">
+        <div class="tv-flag">🇧🇷</div>
+        <div class="tv-title" id="tv-title">Tecnología BRANCO</div>
+        <div class="tv-sub" id="tv-sub">Alta Performance</div>
+        <div class="tv-items">
+          <div class="tv-item"><div class="tv-dot"></div><div class="tv-text" id="tv1">Motores a gasolina de alto desempeño</div></div>
+          <div class="tv-item"><div class="tv-dot"></div><div class="tv-text" id="tv2">Sistemas autocebantes de gran caudal</div></div>
+          <div class="tv-item"><div class="tv-dot"></div><div class="tv-text" id="tv3">Chasis reforzado para uso agrícola</div></div>
+          <div class="tv-item"><div class="tv-dot"></div><div class="tv-text" id="tv4">Eficiencia en trasiego y drenajes</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tech-text">
+      <div class="sec-tag" id="tt-tag">Ingeniería</div>
+      <h2 id="tt-title">Desempeño Brasilero Superior</h2>
+      <p id="ttp1">Las motobombas BRANCO son el resultado de años de desarrollo enfocados en mover grandes volúmenes de agua con agilidad. Su diseño compacto no sacrifica potencia, permitiendo un traslado sencillo y una instalación rápida.</p>
+      <p id="ttp2">Ideales para el sector agrícola y civil, estos equipos aseguran que el suministro de agua sea constante y confiable, optimizando los tiempos de riego y evacuación.</p>
+      <a href="tienda.html" class="tech-link" id="tt-btn">Ver Catálogo</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 id="cta-t">¿Buscas potencia y eficiencia?</h2>
+  <p id="cta-d">Descubre la línea completa de motobombas de caudal BRANCO.</p>
+  <a href="tienda.html" class="btn-white" id="cta-btn">Ver Tienda</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="f-brand">BRANCO</div>
+      <p class="f-desc" id="fd">Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento para el campo y la industria.</p>
+    </div>
+    <div>
+      <div class="f-title" id="fn1">Navegación</div>
+      <ul class="f-list">
+        <li><a href="index.html" id="fl1">Inicio</a></li>
+        <li><a href="tienda.html" id="fl2">Tienda</a></li>
+        <li><a href="contactos.html" id="fl3">Contactos</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-title" id="fn3">Contacto</div>
+      <div class="f-contact-d"><a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bot">© 2026 <span>BRANCO</span> — <span id="fslogan">Tecnología Brasilera</span></div>
+</footer>
+
+<script>
+const T={
+  es:{
+    'n-inicio':'Inicio','n-tienda':'Tienda','n-contacto':'Contactos','n-acerca':'Acerca de nosotros',
+    'ph-tag':'Nuestra historia','ph-title':'Acerca de Nosotros','ph-sub':'Distribuidores oficiales de tecnología brasilera BRANCO. Equipos robustos diseñados para la máxima eficiencia agrícola e industrial.',
+    'pb-home':'Inicio','pb-cur':'Acerca de nosotros',
+    'sbl1':'Rendimiento','sbl2':'Calidad Brasilera','sbl3':'Distribuidores Oficiales','sbl4':'Compromiso',
+    'hs-tag':'Tecnología de Vanguardia','hs-title':'Motobombas BRANCO',
+    'hp1':'Contamos con motobombas de caudal autocebante a gasolina de excelente desempeño, diseñadas específicamente para labores de transporte de agua en aplicaciones de riego por trasiego o labores agrícolas en general, abastecimiento de agua y drenajes.',
+    'hp2':'Estas motobombas son ideales para mover grandes volúmenes de agua en relación con su tamaño y potencia, garantizando una operatividad constante.',
+    'hp3':'Como distribuidores oficiales, nuestra misión es proveer equipos que combinen la ingeniería brasilera de precisión con la durabilidad necesaria para el trabajo diario.',
+    'hv-txt':'Tecnología Brasilera','hb-txt':'Original',
+    'mv-tag':'Nuestros principios','mv-title':'Misión y Visión',
+    'm-label':'Misión','m-text':'Proveer soluciones de bombeo de alta calidad respaldadas por tecnología brasilera BRANCO, ofreciendo equipos confiables, duraderos y de alto rendimiento.',
+    'v-label':'Visión','v-text':'Consolidarnos como el distribuidor de referencia para equipos de bombeo brasileros, reconocidos por nuestra integridad y calidad técnica.',
+    'val-tag':'Lo que nos define','val-title':'Nuestros Valores','val-desc':'Los principios que guían cada decisión que tomamos.',
+    'vt1':'Calidad','vd1':'Solo trabajamos con equipos que cumplen los más altos estándares de fabricación brasilera. Calidad que se nota en el campo.',
+    'vt2':'Compromiso','vd2':'Dedicados a la satisfacción total, brindando equipos que nunca se detienen cuando el trabajo es crítico.',
+    'vt3':'Rendimiento','vd3':'Nuestras motobombas ofrecen una relación potencia-tamaño líder para un transporte de agua eficiente.',
+    'tv-title':'Tecnología BRANCO','tv-sub':'Alta Performance',
+    'tv1':'Motores a gasolina de alto desempeño','tv2':'Sistemas autocebantes de gran caudal','tv3':'Chasis reforzado para uso agrícola','tv4':'Eficiencia en trasiego y drenajes',
+    'tt-tag':'Ingeniería','tt-title':'Desempeño Brasilero Superior',
+    'ttp1':'Las motobombas BRANCO mueven grandes volúmenes de agua con agilidad. Su diseño compacto no sacrifica potencia.',
+    'ttp2':'Ideales para el sector agrícola y civil, aseguran que el suministro de agua sea constante y confiable.',
+    'tt-btn':'Ver Catálogo',
+    'cta-t':'¿Buscas potencia y eficiencia?','cta-d':'Descubre la línea completa de motobombas de caudal BRANCO.','cta-btn':'Ver Tienda',
+    'fd':'Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento.',
+    'fn1':'Navegación','fl1':'Inicio','fl2':'Tienda','fl3':'Contactos','fslogan':'Tecnología Brasilera'
+  },
+  pt:{
+    'n-inicio':'Início','n-tienda':'Loja','n-contacto':'Contato','n-acerca':'Sobre nós',
+    'ph-tag':'Nossa história','ph-title':'Sobre Nós','ph-sub':'Distribuidores oficiais da tecnologia brasilera BRANCO. Equipamentos robustos projetados para máxima eficiência agrícola e industrial.',
+    'pb-home':'Início','pb-cur':'Sobre nós',
+    'sbl1':'Desempenho','sbl2':'Qualidade Brasilera','sbl3':'Distribuidores Oficiais','sbl4':'Compromisso',
+    'hs-tag':'Tecnologia de Vanguarda','hs-title':'Motobombas BRANCO',
+    'hp1':'Temos motobombas de vazão autoescorvantes a gasolina de excelente desempenho, projetadas especificamente para transporte de água em aplicações de irrigação por transfega ou atividades agrícolas em geral, abastecimento e drenagem.',
+    'hp2':'Estas motobombas são ideais para movimentar grandes volumes de água em relação ao seu tamanho e potência, garantindo operacionalidade constante.',
+    'hp3':'Como distribuidores oficiais, nossa missão é fornecer equipamentos que combinem engenharia brasilera de precisão com a durabilidade necessária para o trabalho diário.',
+    'hv-txt':'Tecnologia Brasilera','hb-txt':'Original',
+    'mv-tag':'Nossos princípios','mv-title':'Missão e Visão',
+    'm-label':'Missão','m-text':'Fornecer soluções de bombeamento de alta qualidade respaldadas pela tecnologia brasilera BRANCO, oferecendo equipamentos confiáveis e de alto desempenho.',
+    'v-label':'Visão','v-text':'Consolidar-nos como o distribuidor de referência para equipamentos de bombeamento brasileros, reconhecidos pela nossa integridade e qualidade técnica.',
+    'val-tag':'O que nos define','val-title':'Nossos Valores','val-desc':'Os princípios que guiam cada decisão que tomamos.',
+    'vt1':'Qualidade','vd1':'Trabalhamos apenas com equipamentos que atendem aos mais altos padrões de fabricação brasilera. Qualidade que se nota no campo.',
+    'vt2':'Compromisso','vd2':'Dedicados à satisfação total, fornecendo equipamentos que nunca param quando o trabalho é crítico.',
+    'vt3':'Desempenho','vd3':'Nossas motobombas oferecem uma relação potência-tamanho líder para transporte de água eficiente.',
+    'tv-title':'Tecnologia BRANCO','tv-sub':'Alta Performance',
+    'tv1':'Motores a gasolina de alto desempenho','tv2':'Sistemas autoescorvantes de grande vazão','tv3':'Chassi reforçado para uso agrícola','tv4':'Eficiência em transfega e drenagem',
+    'tt-tag':'Engenharia','tt-title':'Desempenho Brasilero Superior',
+    'ttp1':'As motobombas BRANCO movimentam grandes volumes de água com agilidade. Seu design compacto não sacrifica a potência.',
+    'ttp2':'Ideais para o setor agrícola e civil, garantem que o suprimento de água seja constante e confiável.',
+    'tt-btn':'Ver Catálogo',
+    'cta-t':'Busca potência e eficiência?','cta-d':'Descubra a linha completa de motobombas de vazão BRANCO.','cta-btn':'Ver Loja',
+    'fd':'Distribuidores oficiais de motobombas BRANCO. Tecnologia brasilera de alto desempenho.',
+    'fn1':'Navegação','fl1':'Início','fl2':'Loja','fl3':'Contato','fslogan':'Tecnologia Brasilera'
+  }
+};
+function setLang(l){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  Object.entries(T[l]).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.innerHTML=v;});
+  localStorage.setItem('branco-lang',l);
+}
+setLang(localStorage.getItem('branco-lang')||'es');
+</script>
+</body>
+</html>

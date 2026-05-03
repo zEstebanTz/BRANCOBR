@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactos - BRANCO Motobombas</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--naranja:#ff6600;--negro:#111111;--gris:#f7f5f2;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hidden;}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;background:rgba(17,17,17,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--naranja);}
+.nav-lang{display:flex;gap:8px;}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.25);padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,0.7);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
+.lang-btn:hover,.lang-btn.active{border-color:var(--naranja);color:var(--naranja);}
+
+/* PAGE HEADER */
+.page-header{background:var(--negro);padding:120px 60px 60px;position:relative;overflow:hidden;}
+.page-header::before{content:'CONTACTO';font-family:'Oswald',sans-serif;font-size:130px;font-weight:700;color:rgba(255,255,255,0.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:10px;white-space:nowrap;}
+.ph-inner{position:relative;}
+.ph-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
+.ph-title{font-family:'Oswald',sans-serif;font-size:42px;font-weight:700;color:#fff;text-transform:uppercase;}
+.ph-bread{margin-top:14px;font-size:12px;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:8px;}
+.ph-bread a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;}
+.ph-bread a:hover{color:var(--naranja);}
+.ph-bread span{color:rgba(255,255,255,0.15);}
+
+/* CONTACT SECTION */
+.contact-section{padding:90px 60px;background:#fff;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+
+/* LEFT - INFO SOLUCIONADO */
+.contact-info{
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.ci-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:12px;}
+.ci-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;letter-spacing:-0.5px;color:var(--negro);margin-bottom:20px;}
+.ci-desc{font-size:14px;color:#777;line-height:1.8;margin-bottom:36px;}
+.ci-big-email{margin:36px 0;}
+.ci-big-email a{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;color:var(--naranja);text-decoration:none;letter-spacing:0.5px;transition:opacity 0.2s;word-break:break-all;}
+.ci-big-email a:hover{opacity:0.75;}
+.ci-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#bbb;font-weight:600;margin-bottom:8px;}
+
+.info-cards{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+.info-card{display:flex;align-items:center;gap:18px;padding:20px 24px;background:var(--gris);border-left:3px solid var(--naranja);}
+.ic-icon{font-size:20px;width:44px;height:44px;background:var(--naranja);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+.ic-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaa;font-weight:600;margin-bottom:4px;}
+.ic-value{font-size:14px;font-weight:600;color:var(--negro);}
+.ic-value a{color:var(--negro);text-decoration:none;}
+.ic-value a:hover{color:var(--naranja);}
+
+/* RIGHT - FORM */
+.cf-title{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;color:var(--negro);margin-bottom:28px;letter-spacing:0.5px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;border:1px solid #ddd;padding:13px 16px;font-size:14px;font-family:'Open Sans',sans-serif;background:#fff;transition:border-color 0.2s;outline:none;color:#333;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--naranja);}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.btn-submit{width:100%;background:var(--naranja);color:#fff;border:none;padding:16px;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-family:'Open Sans',sans-serif;}
+.btn-submit:hover{background:#e05500;}
+.form-note{font-size:11px;color:#bbb;margin-top:12px;text-align:center;line-height:1.6;}
+.success-msg{display:none;background:#f0fdf0;border:1px solid #c3e6cb;color:#155724;padding:16px;margin-top:16px;font-size:13px;text-align:center;}
+
+/* BOTTOM STRIP */
+.contact-strip{background:var(--negro);display:grid;grid-template-columns:repeat(2,1fr);}
+.cs-item{padding:44px 40px;border-right:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+.cs-item:last-child{border:none;}
+.cs-ico{font-size:22px;margin-bottom:8px;}
+.cs-title{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;}
+.cs-value{font-size:13px;color:rgba(255,255,255,0.4);}
+.cs-value a{color:var(--naranja);text-decoration:none;}
+
+/* FOOTER */
+.footer{background:#0d0d0d;padding:50px 60px 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.f-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:5px;margin-bottom:12px;}
+.f-desc{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.8;}
+.f-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.f-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.f-list a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.f-list a:hover{color:var(--naranja);}
+.f-contact-d{font-size:13px;color:rgba(255,255,255,0.3);line-height:2;}
+.f-contact-d a{color:var(--naranja);text-decoration:none;}
+.footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);}
+.footer-bot span{color:var(--naranja);}
+
+@media(max-width:900px){
+  .nav{padding:0 24px;}
+  .page-header{padding:100px 24px 40px;}
+  .contact-section{padding:60px 24px;}
+  .contact-grid{grid-template-columns:1fr;gap:48px;}
+  .contact-strip{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:500px){
+  .form-row{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">BRANCO</a>
+  <div class="nav-links">
+    <a href="index.html" id="n-inicio">Inicio</a>
+    <a href="tienda.html" id="n-tienda">Tienda</a>
+    <a href="contactos.html" class="active" id="n-contacto">Contactos</a>
+    <a href="acercade.html" id="n-acerca">Acerca de nosotros</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn active" onclick="setLang('es')">🇪🇸 ES</button>
+    <button class="lang-btn" onclick="setLang('pt')">🇧🇷 PT</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="ph-inner">
+    <div class="ph-tag" id="ph-tag">Estamos aquí para ayudarte</div>
+    <h1 class="ph-title" id="ph-title">Contáctanos</h1>
+    <div class="ph-bread">
+      <a href="index.html" id="pb-home">Inicio</a>
+      <span>/</span>
+      <span id="pb-cur">Contactos</span>
+    </div>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <div class="ci-tag" id="ci-tag">Información de contacto</div>
+      <h2 class="ci-title" id="ci-title">¡Bienvenido a BRANCO!</h2>
+      <p class="ci-desc" id="ci-desc">Nos encantaría ayudarte a encontrar la motobomba perfecta para tus necesidades. Si deseas realizar un pedido o explorar nuestro catálogo personalizado, no dudes en escribirnos.</p>
+
+      <div class="ci-big-email">
+        <div class="ci-label" id="ci-label">Correo de contacto</div>
+        <a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ic-icon">✉</div>
+          <div>
+            <div class="ic-label" id="ic1-l">Email</div>
+            <div class="ic-value"><a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon">📍</div>
+          <div>
+            <div class="ic-label" id="ic2-l">Atención</div>
+            <div class="ic-value" id="ic2-v">Ventas y Distribución</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="cf-title" id="cf-title">Envíanos un Mensaje</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label id="fl-nombre">Nombre</label>
+          <input type="text" id="f-nombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label id="fl-email">Correo electrónico</label>
+          <input type="email" id="f-email" placeholder="tu@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="fl-asunto">Asunto</label>
+        <select id="f-asunto">
+          <option id="fo1">Consulta sobre producto</option>
+          <option id="fo2">Pedido / Cotización</option>
+          <option id="fo4">Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="fl-mensaje">Mensaje</label>
+        <textarea id="f-mensaje" placeholder="Escríbenos tu consulta o pedido..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="sendForm()" id="btn-send">Enviar Mensaje</button>
+      <div class="success-msg" id="success-msg">✓ ¡Mensaje enviado! Te responderemos pronto.</div>
+      <div class="form-note" id="form-note">Al enviar este formulario, serás redirigido a tu cliente de correo para completar el envío.</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="contact-strip">
+  <div class="cs-item">
+    <div class="cs-ico">✉</div>
+    <div class="cs-title" id="cs1t">Email</div>
+    <div class="cs-value"><a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a></div>
+  </div>
+  <div class="cs-item">
+    <div class="cs-ico">🇧🇷</div>
+    <div class="cs-title" id="cs3t">Tecnología Brasilera</div>
+    <div class="cs-value" id="cs3v">Calidad y rendimiento garantizados</div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="f-brand">BRANCO</div>
+      <p class="f-desc" id="fd">Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento.</p>
+    </div>
+    <div>
+      <div class="f-title" id="fn1">Navegación</div>
+      <ul class="f-list">
+        <li><a href="index.html" id="fl1">Inicio</a></li>
+        <li><a href="tienda.html" id="fl2">Tienda</a></li>
+        <li><a href="contactos.html" id="fl3">Contactos</a></li>
+        <li><a href="acercade.html" id="fl4">Acerca de nosotros</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-title" id="fn2">Productos</div>
+      <ul class="f-list">
+        <li><a href="bomba1.html">WP 20</a></li>
+        <li><a href="bomba2.html">WP 20H</a></li>
+        <li><a href="bomba3.html">WP 30</a></li>
+        <li><a href="bomba4.html">WP 30H</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-title" id="fn3">Contacto</div>
+      <div class="f-contact-d"><a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bot">© 2026 <span>BRANCO</span> — <span id="fslogan">Tecnología Brasilera</span></div>
+</footer>
+
+<script>
+function sendForm(){
+  const n=document.getElementById('f-nombre').value;
+  const e=document.getElementById('f-email').value;
+  const a=document.getElementById('f-asunto').value;
+  const m=document.getElementById('f-mensaje').value;
+  if(!n||!e||!m){alert('Por favor completa todos los campos.');return;}
+  const subject=encodeURIComponent('BRANCO - '+a);
+  const body=encodeURIComponent('Nombre: '+n+'\nEmail: '+e+'\n\n'+m);
+  window.location.href='mailto:tecnobrbranco@gmail.com?subject='+subject+'&body='+body;
+  document.getElementById('success-msg').style.display='block';
+}
+
+const T={
+  es:{
+    'n-inicio':'Inicio','n-tienda':'Tienda','n-contacto':'Contactos','n-acerca':'Acerca de nosotros',
+    'ph-tag':'Estamos aquí para ayudarte','ph-title':'Contáctanos','pb-home':'Inicio','pb-cur':'Contactos',
+    'ci-tag':'Información de contacto','ci-title':'¡Bienvenido a BRANCO!',
+    'ci-desc':'Nos encantaría ayudarte a encontrar la motobomba perfecta para tus necesidades. Si deseas realizar un pedido o explorar nuestro catálogo personalizado, no dudes en escribirnos.',
+    'ci-label':'Correo de contacto',
+    'ic1-l':'Email','ic2-l':'Atención','ic2-v':'Ventas y Distribución',
+    'cf-title':'Envíanos un Mensaje','fl-nombre':'Nombre','fl-email':'Correo electrónico','fl-asunto':'Asunto',
+    'fo1':'Consulta sobre producto','fo2':'Pedido / Cotización','fo4':'Otro',
+    'fl-mensaje':'Mensaje','btn-send':'Enviar Mensaje','form-note':'Al enviar, serás redirigido a tu cliente de correo.',
+    'cs1t':'Email','cs3t':'Tecnología Brasilera','cs3v':'Calidad y rendimiento garantizados',
+    'fd':'Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento.',
+    'fn1':'Navegación','fn2':'Productos','fn3':'Contacto',
+    'fl1':'Inicio','fl2':'Tienda','fl3':'Contactos','fl4':'Acerca de nosotros','fslogan':'Tecnología Brasilera'
+  },
+  pt:{
+    'n-inicio':'Início','n-tienda':'Loja','n-contacto':'Contato','n-acerca':'Sobre nós',
+    'ph-tag':'Estamos aqui para ajudá-lo','ph-title':'Entre em Contato','pb-home':'Início','pb-cur':'Contato',
+    'ci-tag':'Informações de contato','ci-title':'Bem-vindo à BRANCO!',
+    'ci-desc':'Adoraríamos ajudá-lo a encontrar a motobomba perfeita para suas necessidades. Se deseja fazer um pedido ou explorar nosso catálogo personalizado, não hesite em nos escrever.',
+    'ci-label':'E-mail de contato',
+    'ic1-l':'E-mail','ic2-l':'Atendimento','ic2-v':'Vendas e Distribuição',
+    'cf-title':'Envie uma Mensagem','fl-nombre':'Nome','fl-email':'E-mail','fl-asunto':'Assunto',
+    'fo1':'Consulta sobre produto','fo2':'Pedido / Cotação','fo4':'Outro',
+    'fl-mensaje':'Mensagem','btn-send':'Enviar Mensagem','form-note':'Ao enviar, você será redirecionado ao seu cliente de e-mail.',
+    'cs1t':'E-mail','cs3t':'Tecnologia Brasilera','cs3v':'Qualidade e desempenho garantidos',
+    'fd':'Distribuidores oficiais de motobombas BRANCO. Tecnologia brasilera de alto desempenho.',
+    'fn1':'Navegação','fn2':'Produtos','fn3':'Contato',
+    'fl1':'Início','fl2':'Loja','fl3':'Contato','fl4':'Sobre nós','fslogan':'Tecnologia Brasilera'
+  }
+};
+function setLang(l){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  Object.entries(T[l]).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.innerHTML=v;});
+  localStorage.setItem('branco-lang',l);
+}
+setLang(localStorage.getItem('branco-lang')||'es');
+</script>
+</body>
+</html>
