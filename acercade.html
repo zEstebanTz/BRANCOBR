@@ -118,17 +118,34 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);text-align:center;}
 .footer-bot span{color:var(--naranja);}
 
+/* RESPONSIVE AJUSTADO */
 @media(max-width:900px){
-  .nav{padding:0 24px;}
-  .page-header{padding:100px 24px 56px;}
+  .nav{padding:0 20px; flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px;}
+  .nav-links{width:100%; order:3; justify-content:center; gap:15px; margin-top:10px;}
+  .nav-links a{font-size:10px;}
+  
+  .page-header{padding:120px 24px 56px;}
+  .page-header::before{font-size:80px;}
+  .ph-title{font-size:32px;}
+  
   .stats-band{grid-template-columns:1fr 1fr;}
-  .historia-section,.mv-grid,.values-grid,.tech-grid{grid-template-columns:1fr;gap:40px;}
+  .sb-item{border-bottom:1px solid rgba(255,255,255,0.2); border-right:1px solid rgba(255,255,255,0.2);}
+  .sb-item:nth-child(2n){border-right:none;}
+  .sb-item:nth-child(n+3){border-bottom:none;}
+  
+  .historia-section,.mv-grid,.values-grid,.tech-grid{grid-template-columns:1fr; gap:40px;}
   .values-section,.historia-section,.mv-section,.tech-section{padding:60px 24px;}
+  
+  .hs-badge{position:static; margin-top:16px; display:inline-block;}
   .footer-top{grid-template-columns:1fr 1fr;}
-  .hs-badge{position:static;margin-top:16px;display:inline-block;}
 }
+
 @media(max-width:500px){
+  .nav-links{gap:10px;}
+  .nav-links a{font-size:9px;}
   .footer-top{grid-template-columns:1fr;}
+  .ph-title{font-size:28px;}
+  .sb-num{font-size:28px;}
 }
 </style>
 </head>
@@ -333,7 +350,7 @@ const T={
     'mv-tag':'Nossos princípios','mv-title':'Missão e Visão',
     'm-label':'Missão','m-text':'Fornecer soluções de bombeamento de alta qualidade respaldadas pela tecnologia brasilera BRANCO, oferecendo equipamentos confiáveis e de alto desempenho.',
     'v-label':'Visão','v-text':'Consolidar-nos como o distribuidor de referência para equipamentos de bombeamento brasileros, reconhecidos pela nossa integridade e qualidade técnica.',
-    'val-tag':'O que nos define','val-title':'Nossos Valores','val-desc':'Os princípios que guiam cada decisão que tomamos.',
+    'val-tag':'O que nos define','val-title':'Nuestros Valores','val-desc':'Os princípios que guiam cada decisão que tomamos.',
     'vt1':'Qualidade','vd1':'Trabalhamos apenas com equipamentos que atendem aos mais altos padrões de fabricação brasilera. Qualidade que se nota no campo.',
     'vt2':'Compromisso','vd2':'Dedicados à satisfação total, fornecendo equipamentos que nunca param quando o trabalho é crítico.',
     'vt3':'Desempenho','vd3':'Nossas motobombas oferecem uma relação potência-tamanho líder para transporte de água eficiente.',
@@ -350,7 +367,8 @@ const T={
 };
 function setLang(l){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  const btn = document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`);
+  if(btn) btn.classList.add('active');
   Object.entries(T[l]).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.innerHTML=v;});
   localStorage.setItem('branco-lang',l);
 }
