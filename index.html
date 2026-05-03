@@ -132,46 +132,34 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .f-copy{font-size:11px;color:rgba(255,255,255,0.2);}
 .f-copy span{color:var(--naranja);}
 
-/* ======= LANG HIDDEN ======= */
-.lang-content{display:none;}
-.lang-content.active{display:block;}
-
+/* ======= RESPONSIVE ======= */
 @media(max-width:900px){
-  .nav{padding:0 24px;}
-  .nav-links{display:none;} /* Se puede ocultar o cambiar a menú hamburguesa si gustas */
+  .nav{padding:0 20px; flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px;}
+  .nav-links{gap:15px; width:100%; justify-content:center; order:3; margin-top:10px;}
+  .nav-links a{font-size:10px; letter-spacing:1px;}
+  .nav-logo{font-size:20px; letter-spacing:2px;}
   .hero h1{font-size:36px;}
-  .hero-content{left:28px;max-width:90%;}
+  .hero-content{left:20px; width:calc(100% - 40px);}
   .hero-stat{display:none;}
   .strip{flex-wrap:wrap;}
-  .strip-item{padding:12px 20px; border-right:none; width:50%; justify-content:center;}
-  .section{padding:60px 24px;}
+  .strip-item{padding:12px 20px; width:50%; border-right:none; justify-content:center;}
+  .section{padding:60px 20px;}
   .prods-wrap{grid-template-columns:1fr 1fr;}
   .about-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
-  .hero-dots{left:28px;}
-}
-
-@media(max-width:600px){
-  .nav-logo{font-size:18px; letter-spacing:2px;}
-  .lang-btn{padding:4px 6px; font-size:10px;}
-  .hero h1{font-size:32px;}
-  .hero-sub{font-size:13px;}
-  .btn-fill, .btn-outline{padding:12px 20px; font-size:10px; width:100%; text-align:center;}
-  .strip-item{width:100%; border-bottom:1px solid rgba(255,255,255,0.1);}
-  .about-text-box{padding:40px 24px;}
-  .about-visual{min-height:300px;}
-  .av-main{font-size:38px;}
-  .sec-title{font-size:28px;}
-  .cta-band h2{font-size:26px;}
-  .cta-band::before{font-size:80px;}
 }
 
 @media(max-width:500px){
+  .nav-lang{gap:4px;}
+  .lang-btn{font-size:9px; padding:4px 6px;}
+  .hero-btns{flex-direction:column;}
+  .btn-fill, .btn-outline{width:100%; text-align:center;}
+  .strip-item{width:100%; border-bottom:1px solid rgba(255,255,255,0.1);}
   .prods-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr; gap:30px;}
-  .footer-bot{flex-direction:column;gap:10px;text-align:center;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bot{flex-direction:column; gap:10px; text-align:center;}
   .stats-row{grid-template-columns:1fr;}
 }
 </style>
@@ -359,7 +347,7 @@ function goTo(n){
     dots[cur].classList.add('active');
   }
 }
-setInterval(()=>goTo(cur+1),5000);
+setInterval(()=>goTo(cur+1), 5000);
 dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.i)));
 
 // LANGUAGE
@@ -401,9 +389,9 @@ const translations={
     'ab-p1':'Equipamentos BRANCO projetados para oferecer máxima eficiência, durabilidade e desempenho em qualquer ambiente. Cada produto passa por rigorosos controles de qualidade.',
     'ab-p2':'Somos distribuidores oficiais, comprometidos em fornecer soluções de bombeamento confiáveis para agricultura, construção e uso doméstico.',
     'sb1':'Modelos disponíveis','sb2':'Qualidade garantida',
-    'why-tag':'Por que nos escolher','why-title':'Compromiso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
-    'w1t':'Qualidade Garantida','w1d':'Produtos respaldados pelas melhores marcas do mercado, garantindo durabilidade e eficiência.',
-    'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ajuda a escolher o equipamento certo para suas necessidades.',
+    'why-tag':'Por que nos escolher','why-title':'Compromisso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
+    'w1t':'Qualidade Garantida','w1d':'Productos respaldados por las mejores marcas del mercado, garantizando durabilidad y eficiencia.',
+    'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ayuda a elegir el equipo cierto para sus necesidades.',
     'cta-t':'Não Espere Mais!','cta-d':'Visite nossa loja online e leve seu trabalho ao próximo nível.','cta-btn':'Ver Loja',
     'fd-desc':'Distribuidores oficiais de motobombas BRANCO. Tecnologia brasileira de alto desempenho para cada necessidade.',
     'fn-nav':'Navegação','fn-prod':'Produtos','fn-contact':'Contato',
@@ -411,6 +399,7 @@ const translations={
     'fc-slogan':'Tecnologia Brasileira'
   }
 };
+
 function setLang(lang){
   const t=translations[lang];
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
