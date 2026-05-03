@@ -138,11 +138,12 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 
 @media(max-width:900px){
   .nav{padding:0 24px;}
+  .nav-links{display:none;} /* Se puede ocultar o cambiar a menú hamburguesa si gustas */
   .hero h1{font-size:36px;}
   .hero-content{left:28px;max-width:90%;}
   .hero-stat{display:none;}
   .strip{flex-wrap:wrap;}
-  .strip-item{padding:12px 20px;}
+  .strip-item{padding:12px 20px; border-right:none; width:50%; justify-content:center;}
   .section{padding:60px 24px;}
   .prods-wrap{grid-template-columns:1fr 1fr;}
   .about-wrap{grid-template-columns:1fr;}
@@ -150,11 +151,28 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   .footer-top{grid-template-columns:1fr 1fr;}
   .hero-dots{left:28px;}
 }
+
+@media(max-width:600px){
+  .nav-logo{font-size:18px; letter-spacing:2px;}
+  .lang-btn{padding:4px 6px; font-size:10px;}
+  .hero h1{font-size:32px;}
+  .hero-sub{font-size:13px;}
+  .btn-fill, .btn-outline{padding:12px 20px; font-size:10px; width:100%; text-align:center;}
+  .strip-item{width:100%; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .about-text-box{padding:40px 24px;}
+  .about-visual{min-height:300px;}
+  .av-main{font-size:38px;}
+  .sec-title{font-size:28px;}
+  .cta-band h2{font-size:26px;}
+  .cta-band::before{font-size:80px;}
+}
+
 @media(max-width:500px){
   .prods-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr; gap:30px;}
   .footer-bot{flex-direction:column;gap:10px;text-align:center;}
+  .stats-row{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -325,13 +343,22 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 <script>
 // NAV SCROLL
 window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
+  const nav = document.getElementById('nav');
+  if(nav) nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // SLIDER
 const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.dot');
 let cur=0;
-function goTo(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n%slides.length;slides[cur].classList.add('active');dots[cur].classList.add('active');}
+function goTo(n){
+  if(slides.length > 0){
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur=n%slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+}
 setInterval(()=>goTo(cur+1),5000);
 dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.i)));
 
@@ -374,7 +401,7 @@ const translations={
     'ab-p1':'Equipamentos BRANCO projetados para oferecer máxima eficiência, durabilidade e desempenho em qualquer ambiente. Cada produto passa por rigorosos controles de qualidade.',
     'ab-p2':'Somos distribuidores oficiais, comprometidos em fornecer soluções de bombeamento confiáveis para agricultura, construção e uso doméstico.',
     'sb1':'Modelos disponíveis','sb2':'Qualidade garantida',
-    'why-tag':'Por que nos escolher','why-title':'Compromisso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
+    'why-tag':'Por que nos escolher','why-title':'Compromiso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
     'w1t':'Qualidade Garantida','w1d':'Produtos respaldados pelas melhores marcas do mercado, garantindo durabilidade e eficiência.',
     'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ajuda a escolher o equipamento certo para suas necessidades.',
     'cta-t':'Não Espere Mais!','cta-d':'Visite nossa loja online e leve seu trabalho ao próximo nível.','cta-btn':'Ver Loja',
@@ -387,7 +414,8 @@ const translations={
 function setLang(lang){
   const t=translations[lang];
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  const activeBtn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
+  if(activeBtn) activeBtn.classList.add('active');
   Object.entries(t).forEach(([id,val])=>{
     const el=document.getElementById(id);
     if(el) el.innerHTML=val;
