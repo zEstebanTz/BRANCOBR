@@ -3,214 +3,399 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Motobomba BRANCO WP 20H</title>
-
+<title>BRANCO - Tecnología Brasilera de Alto Rendimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-}
+:root{--naranja:#ff6600;--negro:#111111;--gris:#f7f5f2;--texto:#333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overflow-x:hidden;}
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    gap: 40px;
-    background: white;
-    border-radius: 10px;
-}
+/* ======= NAV ======= */
+.nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;transition:all 0.4s;background:transparent;}
+.nav.scrolled{background:rgba(17,17,17,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
+.nav-links{display:flex;gap:36px;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--naranja);}
+.nav-lang{display:flex;gap:8px;align-items:center;}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.25);padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,0.7);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
+.lang-btn:hover,.lang-btn.active{border-color:var(--naranja);color:var(--naranja);}
+.lang-flag{font-size:14px;}
 
-/* IMAGEN */
-.product-images {
-    flex: 1;
-    position: relative;
-}
+/* ======= HERO SLIDER ======= */
+.hero{position:relative;height:100vh;overflow:hidden;background:#111;}
+.slides-wrap{position:absolute;inset:0;}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
+.slide.active{opacity:1;}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);transition:transform 6s ease;}
+.slide.active .slide-bg{transform:scale(1);}
+.s1 .slide-bg{background-image:url('imagen/reemplazar3.png'),linear-gradient(135deg,#0d1f35,#1a3a5c);}
+.s2 .slide-bg{background-image:url('imagen/reemplazar2.jpg'),linear-gradient(135deg,#1f0d0d,#3a1a1a);}
+.s3 .slide-bg{background-image:url('imagen/reemplazar1.jpg'),linear-gradient(135deg,#0d1f10,#1a3a20);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.75) 55%,rgba(0,0,0,0.15));}
+.hero-content{position:absolute;top:50%;left:80px;transform:translateY(-50%);color:#fff;max-width:580px;}
+.hero-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--naranja);}
+.hero h1{font-family:'Oswald',sans-serif;font-size:62px;font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1 span{color:var(--naranja);}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:32px;max-width:440px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-fill{display:inline-block;padding:14px 32px;background:var(--naranja);color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:all 0.2s;}
+.btn-fill:hover{background:#e05500;}
+.btn-outline{display:inline-block;padding:13px 32px;border:1px solid rgba(255,255,255,0.4);color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:all 0.2s;}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+.hero-dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;}
+.dot{width:28px;height:2px;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s;}
+.dot.active{background:var(--naranja);width:44px;}
+.hero-stat{position:absolute;right:60px;bottom:36px;display:flex;gap:32px;}
+.stat-item{text-align:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.3);backdrop-filter:blur(8px);}
+.stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--naranja);display:block;}
+.stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:2px;}
 
-/* TEXTO TECNOLOGÍA */
-.tech-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 8px 12px;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 5px;
-}
+/* ======= STRIP ======= */
+.strip{background:var(--negro);display:flex;justify-content:center;}
+.strip-item{padding:16px 44px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);border-right:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+.strip-item:last-child{border-right:none;}
+.strip-item:hover{color:var(--naranja);}
+.strip-icon{color:var(--naranja);font-size:14px;}
 
-.product-images img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: contain;
-    background: #fff;
-}
+/* ======= SECTION BASE ======= */
+.section{padding:90px 60px;}
+.sec-head{text-align:center;margin-bottom:60px;}
+.sec-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
+.sec-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;letter-spacing:-0.5px;color:var(--negro);text-transform:uppercase;}
+.sec-desc{font-size:14px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
-/* INFO */
-.product-info {
-    flex: 1;
-}
+/* ======= PRODUCTOS GRID ======= */
+.prods-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;}
+.prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;}
+.prod-img-box{height:280px;overflow:hidden;background:#f5f5f5;position:relative;display:flex;align-items:center;justify-content:center;}
+.prod-img-box img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.prod-card:hover .prod-img-box img{transform:scale(1.08);}
+.prod-hover{position:absolute;inset:0;background:rgba(17,17,17,0.5);opacity:0;transition:opacity 0.4s;display:flex;align-items:center;justify-content:center;}
+.prod-card:hover .prod-hover{opacity:1;}
+.prod-cta{background:var(--naranja);color:#fff;padding:11px 22px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transform:translateY(10px);opacity:0;transition:all 0.3s 0.05s;}
+.prod-card:hover .prod-cta{transform:translateY(0);opacity:1;}
+.prod-info{padding:20px 22px 22px;}
+.prod-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--negro);}
+.prod-desc{font-size:12px;color:#999;margin-top:4px;}
+.prod-badge{display:inline-block;margin-top:8px;background:#fff5f0;color:var(--naranja);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 9px;}
 
-.product-title {
-    font-size: 28px;
-    font-weight: bold;
-}
+/* ======= ABOUT ======= */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;}
+.about-visual{background:#0d1f35;position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center;justify-content:center;}
+.about-visual::before{content:'';position:absolute;inset:0;background:url('imagen/reemplazar4.png') center/cover;opacity:0.3;}
+.about-visual-inner{position:relative;text-align:center;color:#fff;padding:40px;}
+.av-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);margin-bottom:12px;}
+.av-main{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;line-height:1;text-transform:uppercase;}
+.av-sub{font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px;letter-spacing:2px;text-transform:uppercase;}
+.about-text-box{background:var(--gris);padding:70px 60px;display:flex;flex-direction:column;justify-content:center;}
+.about-text-box .sec-tag{text-align:left;}
+.about-text-box h2{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;margin:10px 0 18px;letter-spacing:-0.5px;}
+.about-text-box p{font-size:14px;color:#666;line-height:1.8;margin-bottom:14px;}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;}
+.stat-box{border-left:3px solid var(--naranja);padding-left:16px;}
+.stat-box-num{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:var(--negro);}
+.stat-box-label{font-size:10px;color:#999;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
 
-.stock {
-    color: green;
-    margin: 10px 0;
-    font-weight: bold;
-}
+/* ======= POR QUE ======= */
+.why-section{background:var(--negro);padding:90px 60px;}
+.why-section .sec-title{color:#fff;}
+.why-section .sec-desc{color:rgba(255,255,255,0.4);}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#1f1f1f;margin-top:56px;}
+.why-card{background:var(--negro);padding:38px 28px;transition:background 0.3s;}
+.why-card:hover{background:#161616;}
+.why-ico{width:46px;height:46px;background:var(--naranja);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:22px;}
+.why-ttl{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:10px;}
+.why-txt{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;}
 
-/* LISTAS */
-ul {
-    padding-left: 20px;
-}
+/* ======= CTA BANNER ======= */
+.cta-band{position:relative;background:var(--naranja);padding:80px 60px;text-align:center;overflow:hidden;}
+.cta-band::before{content:'BRANCO';position:absolute;font-family:'Oswald',sans-serif;font-size:140px;font-weight:700;color:rgba(255,255,255,0.07);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;letter-spacing:10px;}
+.cta-band h2{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:#fff;text-transform:uppercase;position:relative;margin-bottom:10px;}
+.cta-band p{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:28px;position:relative;}
+.btn-white{display:inline-block;padding:14px 36px;background:#fff;color:var(--naranja);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:all 0.2s;position:relative;}
+.btn-white:hover{background:var(--negro);color:#fff;}
 
-/* TABS */
-.tabs {
-    margin-top: 30px;
-}
+/* ======= FOOTER ======= */
+.footer{background:#0d0d0d;padding:64px 60px 28px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:52px;}
+.f-brand{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;margin-bottom:14px;}
+.f-desc{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.8;}
+.f-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:18px;}
+.f-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.f-list a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.f-list a:hover{color:var(--naranja);}
+.f-contact{font-size:13px;color:rgba(255,255,255,0.35);line-height:2.1;}
+.f-contact a{color:var(--naranja);text-decoration:none;}
+.footer-bot{border-top:1px solid #1c1c1c;padding-top:22px;display:flex;justify-content:space-between;align-items:center;}
+.f-copy{font-size:11px;color:rgba(255,255,255,0.2);}
+.f-copy span{color:var(--naranja);}
 
-.tab-buttons {
-    display: flex;
-    border-bottom: 2px solid #ddd;
-}
+/* ======= LANG HIDDEN ======= */
+.lang-content{display:none;}
+.lang-content.active{display:block;}
 
-.tab-buttons button {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
+@media(max-width:900px){
+  .nav{padding:0 24px;}
+  .hero h1{font-size:36px;}
+  .hero-content{left:28px;max-width:90%;}
+  .hero-stat{display:none;}
+  .strip{flex-wrap:wrap;}
+  .strip-item{padding:12px 20px;}
+  .section{padding:60px 24px;}
+  .prods-wrap{grid-template-columns:1fr 1fr;}
+  .about-wrap{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .hero-dots{left:28px;}
 }
-
-.tab-buttons button.active {
-    border-bottom: 3px solid #ff6600;
-    color: #ff6600;
-}
-
-.tab-content {
-    display: none;
-    padding: 20px 0;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-/* SECCIONES */
-.section-title {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #ff6600;
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px){
-    .container {
-        flex-direction: column;
-    }
+@media(max-width:500px){
+  .prods-wrap{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bot{flex-direction:column;gap:10px;text-align:center;}
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">BRANCO</a>
+  <div class="nav-links">
+    <a href="index.html" class="active" id="nav-inicio">Inicio</a>
+    <a href="tienda.html" id="nav-tienda">Tienda</a>
+    <a href="contactos.html" id="nav-contacto">Contactos</a>
+    <a href="acercade.html" id="nav-acerca">Acerca de nosotros</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn active" onclick="setLang('es')"><span class="lang-flag">🇪🇸</span> ES</button>
+    <button class="lang-btn" onclick="setLang('pt')"><span class="lang-flag">🇧🇷</span> PT</button>
+  </div>
+</nav>
 
-    <!-- IMAGEN -->
-    <div class="product-images">
-        <div class="tech-label">TECNOLOGÍA BRASILERA</div>
-        <img src="imagen/mc1.png" alt="Motobomba BRANCO WP 20H">
+<section class="hero">
+  <div class="slides-wrap">
+    <div class="slide s1 active"><div class="slide-bg"></div></div>
+    <div class="slide s2"><div class="slide-bg"></div></div>
+    <div class="slide s3"><div class="slide-bg"></div></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span id="h-tag">Tecnología Brasilera</span></div>
+    <h1 id="h-title">MOTOBOMBAS<br><span>BRANCO</span></h1>
+    <p class="hero-sub" id="h-sub">Equipos de alto rendimiento diseñados para ofrecer máxima eficiencia, durabilidad y potencia en cualquier entorno.</p>
+    <div class="hero-btns">
+      <a href="tienda.html" class="btn-fill" id="h-btn1">Ver Productos</a>
+      <a href="acercade.html" class="btn-outline" id="h-btn2">Nosotros</a>
     </div>
+  </div>
+  <div class="hero-dots">
+    <div class="dot active" data-i="0"></div>
+    <div class="dot" data-i="1"></div>
+    <div class="dot" data-i="2"></div>
+  </div>
+  <div class="hero-stat">
+    <div class="stat-item"><span class="stat-num">4</span><div class="stat-label" id="hs-prod">Productos</div></div>
+    <div class="stat-item"><span class="stat-num">100%</span><div class="stat-label" id="hs-cal">Calidad</div></div>
+  </div>
+</section>
 
-    <!-- INFO -->
-    <div class="product-info">
-
-        <div class="product-title">
-            MOTOBOMBA BRANCO WP 20H
-        </div>
-
-        <div class="stock">Alta presión - Disponible</div>
-
-        <h3>Aplicaciones</h3>
-        <ul>
-            <li>Trasvase de agua limpia</li>
-            <li>Riego agrícola</li>
-            <li>Llenado rápido de depósitos</li>
-            <li>Uso industrial y construcción</li>
-        </ul>
-
-        <!-- TABS -->
-        <div class="tabs">
-
-            <div class="tab-buttons">
-                <button class="active" onclick="openTab(event, 'desc')">Descripción</button>
-                <button onclick="openTab(event, 'specs')">Especificaciones</button>
-            </div>
-
-            <!-- DESCRIPCIÓN -->
-            <div id="desc" class="tab-content active">
-                <p>
-                    Nuestra bomba de alta presión proporciona bajo consumo de combustible.
-                    Ideal para transportar grandes cantidades de agua limpia y trabajos que requieren llenado rápido y eficiente.
-                </p>
-            </div>
-
-            <!-- ESPECIFICACIONES -->
-            <div id="specs" class="tab-content">
-                <ul>
-
-                    <li class="section-title">MOTOR</li>
-                    <li>Tipo: Gasolina, 4 tiempos</li>
-                    <li>Potencia: 6.5 HP (3600 RPM)</li>
-                    <li>Encendido: Transistorizado</li>
-                    <li>Arranque: Manual (tirador retráctil)</li>
-                    <li>Cilindrada: 196 cc</li>
-
-                    <li class="section-title">BOMBA DE AGUA</li>
-                    <li>Tipo: Centrífuga autocebante</li>
-                    <li>Caudal: 500 L/min</li>
-                    <li>Diámetro de succión: 2 pulgadas</li>
-                    <li>Diámetro de descarga: 2 pulgadas</li>
-                    <li>Altura máxima: 70 m</li>
-                    <li>Altura máxima de succión: 8 m</li>
-
-                    <li class="section-title">DIMENSIONES</li>
-                    <li>Peso en seco: 23 kg</li>
-                    <li>Chasis: Tipo jaula metálico reforzado</li>
-
-                    <li class="section-title">OTRAS ESPECIFICACIONES</li>
-                    <li>Depósito de gasolina: 3.6 litros</li>
-                    <li>Aceite de motor: 15W-40</li>
-                    <li>Capacidad de aceite: 0.6 litros</li>
-
-                </ul>
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="strip">
+  <div class="strip-item"><span class="strip-icon">✓</span><span id="s1">Calidad Garantizada</span></div>
+  <div class="strip-item"><span class="strip-icon">★</span><span id="s4">Asesoría Experta</span></div>
 </div>
 
+<section class="section" style="padding-left:0;padding-right:0;padding-top:80px;padding-bottom:80px;">
+  <div class="sec-head" style="padding:0 60px;">
+    <div class="sec-tag" id="pt-tag">Catálogo</div>
+    <h2 class="sec-title" id="pt-title">Nuestros Productos</h2>
+    <p class="sec-desc" id="pt-desc">Soluciones de bombeo de alto rendimiento para agricultura, construcción y uso doméstico.</p>
+  </div>
+  <div class="prods-wrap">
+    <a href="bomba1.html" class="prod-card">
+      <div class="prod-img-box"><img src="imagen/bomba1.png" alt="WP 20"></div>
+      <div class="prod-hover"><div class="prod-cta" id="pc-btn">Ver Detalles</div></div>
+      <div class="prod-info">
+        <div class="prod-name">WP 20</div>
+        <div class="prod-desc" id="pc1-d">Motobomba 2 pulgadas</div>
+        <div class="prod-badge" id="pc-badge">Más vendido</div>
+      </div>
+    </a>
+    <a href="bomba2.html" class="prod-card">
+      <div class="prod-img-box"><img src="imagen/bomba2.png" alt="WP 20H"></div>
+      <div class="prod-hover"><div class="prod-cta">Ver Detalles</div></div>
+      <div class="prod-info">
+        <div class="prod-name">WP 20H</div>
+        <div class="prod-desc" id="pc2-d">Motobomba 2" alta presión</div>
+      </div>
+    </a>
+    <a href="bomba3.html" class="prod-card">
+      <div class="prod-img-box"><img src="imagen/bomba3.png" alt="WP 30"></div>
+      <div class="prod-hover"><div class="prod-cta">Ver Detalles</div></div>
+      <div class="prod-info">
+        <div class="prod-name">WP 30</div>
+        <div class="prod-desc" id="pc3-d">Motobomba 3 pulgadas</div>
+      </div>
+    </a>
+    <a href="bomba4.html" class="prod-card">
+      <div class="prod-img-box"><img src="imagen/bomba4.png" alt="WP 30H"></div>
+      <div class="prod-hover"><div class="prod-cta">Ver Detalles</div></div>
+      <div class="prod-info">
+        <div class="prod-name">WP 30H</div>
+        <div class="prod-desc" id="pc4-d">Motobomba 3" alta presión</div>
+        <div class="prod-badge" id="pc-nuevo">Nuevo</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="about-wrap">
+  <div class="about-visual">
+    <div class="about-visual-inner">
+      <div class="av-tag" id="av-tag">Desde Brasil</div>
+      <div class="av-main">POTENCIA<br>REAL</div>
+      <div class="av-sub" id="av-sub">Alto Rendimiento</div>
+    </div>
+  </div>
+  <div class="about-text-box">
+    <div class="sec-tag" id="ab-tag">Quiénes somos</div>
+    <h2 id="ab-title">Tecnología Brasilera de Alto Rendimiento</h2>
+    <p id="ab-p1">Equipos BRANCO diseñados para ofrecer máxima eficiencia, durabilidad y rendimiento en cualquier entorno. Cada producto pasa por rigurosos controles de calidad antes de llegar a nuestros clientes.</p>
+    <p id="ab-p2">Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo confiables para agricultura, construcción y uso doméstico.</p>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-box-num">4+</div><div class="stat-box-label" id="sb1">Modelos disponibles</div></div>
+      <div class="stat-box"><div class="stat-box-num">100%</div><div class="stat-box-label" id="sb2">Calidad garantizada</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="why-section">
+  <div class="sec-head">
+    <div class="sec-tag" id="why-tag">Por qué elegirnos</div>
+    <h2 class="sec-title" id="why-title">Compromiso con la Excelencia</h2>
+    <p class="sec-desc" id="why-desc">Todo lo que necesitas en un solo lugar, respaldado por tecnología brasilera.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-ico">✓</div><div class="why-ttl" id="w1t">Calidad Garantizada</div><p class="why-txt" id="w1d">Productos respaldados por las mejores marcas del mercado, garantizando durabilidad y eficiencia.</p></div>
+    <div class="why-card"><div class="why-ico">★</div><div class="why-ttl" id="w2t">Asesoría Experta</div><p class="why-txt" id="w2d">Nuestro equipo de profesionales te ayuda a elegir el equipo adecuado para tus necesidades específicas.</p></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 id="cta-t">¡No Esperes Más!</h2>
+  <p id="cta-d">Descubre nuestra tienda online y lleva tu trabajo al siguiente nivel.</p>
+  <a href="tienda.html" class="btn-white" id="cta-btn">Ver Tienda</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="f-brand">BRANCO</div>
+      <p class="f-desc" id="fd-desc">Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.</p>
+    </div>
+    <div>
+      <div class="f-title" id="fn-nav">Navegación</div>
+      <ul class="f-list">
+        <li><a href="index.html" id="fl-inicio">Inicio</a></li>
+        <li><a href="tienda.html" id="fl-tienda">Tienda</a></li>
+        <li><a href="contactos.html" id="fl-contacto">Contactos</a></li>
+        <li><a href="acercade.html" id="fl-acerca">Acerca de nosotros</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-title" id="fn-prod">Productos</div>
+      <ul class="f-list">
+        <li><a href="bomba1.html">WP 20</a></li>
+        <li><a href="bomba2.html">WP 20H</a></li>
+        <li><a href="bomba3.html">WP 30</a></li>
+        <li><a href="bomba4.html">WP 30H</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-title" id="fn-contact">Contacto</div>
+      <div class="f-contact"><a href="mailto:tecnobrbranco@gmail.com">tecnobrbranco@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <div class="f-copy">© 2026 <span>BRANCO</span> — <span id="fc-slogan">Tecnología Brasilera</span></div>
+  </div>
+</footer>
+
 <script>
-function openTab(evt, tabName) {
-    let contents = document.querySelectorAll(".tab-content");
-    let buttons = document.querySelectorAll(".tab-buttons button");
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
+});
 
-    contents.forEach(c => c.classList.remove("active"));
-    buttons.forEach(b => b.classList.remove("active"));
+// SLIDER
+const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.dot');
+let cur=0;
+function goTo(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n%slides.length;slides[cur].classList.add('active');dots[cur].classList.add('active');}
+setInterval(()=>goTo(cur+1),5000);
+dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.i)));
 
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
+// LANGUAGE
+const translations={
+  es:{
+    'nav-inicio':'Inicio','nav-tienda':'Tienda','nav-contacto':'Contactos','nav-acerca':'Acerca de nosotros',
+    'h-tag':'Tecnología Brasilera','h-title':'MOTOBOMBAS<br><span>BRANCO</span>',
+    'h-sub':'Equipos de alto rendimiento diseñados para ofrecer máxima eficiencia, durabilidad y potencia en cualquier entorno.',
+    'h-btn1':'Ver Productos','h-btn2':'Nosotros',
+    'hs-prod':'Productos','hs-cal':'Calidad',
+    's1':'Calidad Garantizada','s4':'Asesoría Experta',
+    'pt-tag':'Catálogo','pt-title':'Nuestros Productos','pt-desc':'Soluciones de bombeo de alto rendimiento para agricultura, construcción y uso doméstico.',
+    'pc-btn':'Ver Detalles','pc1-d':'Motobomba 2 pulgadas','pc2-d':'Motobomba 2" alta presión','pc3-d':'Motobomba 3 pulgadas','pc4-d':'Motobomba 3" alta presión','pc-badge':'Más vendido','pc-nuevo':'Nuevo',
+    'av-tag':'Desde Brasil','av-sub':'Alto Rendimiento',
+    'ab-tag':'Quiénes somos','ab-title':'Tecnología Brasilera de Alto Rendimiento',
+    'ab-p1':'Equipos BRANCO diseñados para ofrecer máxima eficiencia, durabilidad y rendimiento en cualquier entorno. Cada producto pasa por rigurosos controles de calidad antes de llegar a nuestros clientes.',
+    'ab-p2':'Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo confiables para agricultura, construcción y uso doméstico.',
+    'sb1':'Modelos disponibles','sb2':'Calidad garantizada',
+    'why-tag':'Por qué elegirnos','why-title':'Compromiso con la Excelencia','why-desc':'Todo lo que necesitas en un solo lugar, respaldado por tecnología brasilera.',
+    'w1t':'Calidad Garantizada','w1d':'Productos respaldados por las mejores marcas del mercado, garantizando durabilidad y eficiencia.',
+    'w2t':'Asesoría Experta','w2d':'Nuestro equipo de profesionales te ayuda a elegir el equipo adecuado para tus necesidades específicas.',
+    'cta-t':'¡No Esperes Más!','cta-d':'Descubre nuestra tienda online y lleva tu trabajo al siguiente nivel.','cta-btn':'Ver Tienda',
+    'fd-desc':'Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.',
+    'fn-nav':'Navegación','fn-prod':'Productos','fn-contact':'Contacto',
+    'fl-inicio':'Inicio','fl-tienda':'Tienda','fl-contacto':'Contactos','fl-acerca':'Acerca de nosotros',
+    'fc-slogan':'Tecnología Brasilera'
+  },
+  pt:{
+    'nav-inicio':'Início','nav-tienda':'Loja','nav-contacto':'Contato','nav-acerca':'Sobre nós',
+    'h-tag':'Tecnologia Brasileira','h-title':'MOTOBOMBAS<br><span>BRANCO</span>',
+    'h-sub':'Equipamentos de alto desempenho projetados para oferecer máxima eficiência, durabilidade e potência em qualquer ambiente.',
+    'h-btn1':'Ver Produtos','h-btn2':'Sobre nós',
+    'hs-prod':'Produtos','hs-cal':'Qualidade',
+    's1':'Qualidade Garantida','s4':'Assessoria Especializada',
+    'pt-tag':'Catálogo','pt-title':'Nossos Produtos','pt-desc':'Soluções de bombeamento de alto desempenho para agricultura, construção e uso doméstico.',
+    'pc-btn':'Ver Detalhes','pc1-d':'Motobomba 2 polegadas','pc2-d':'Motobomba 2" alta pressão','pc3-d':'Motobomba 3 polegadas','pc4-d':'Motobomba 3" alta pressão','pc-badge':'Mais vendido','pc-nuevo':'Novo',
+    'av-tag':'Do Brasil','av-sub':'Alto Desempenho',
+    'ab-tag':'Quem somos','ab-title':'Tecnologia Brasileira de Alto Desempenho',
+    'ab-p1':'Equipamentos BRANCO projetados para oferecer máxima eficiência, durabilidade e desempenho em qualquer ambiente. Cada produto passa por rigorosos controles de qualidade.',
+    'ab-p2':'Somos distribuidores oficiais, comprometidos em fornecer soluções de bombeamento confiáveis para agricultura, construção e uso doméstico.',
+    'sb1':'Modelos disponíveis','sb2':'Qualidade garantida',
+    'why-tag':'Por que nos escolher','why-title':'Compromisso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
+    'w1t':'Qualidade Garantida','w1d':'Produtos respaldados pelas melhores marcas do mercado, garantindo durabilidade e eficiência.',
+    'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ajuda a escolher o equipamento certo para suas necessidades.',
+    'cta-t':'Não Espere Mais!','cta-d':'Visite nossa loja online e leve seu trabalho ao próximo nível.','cta-btn':'Ver Loja',
+    'fd-desc':'Distribuidores oficiais de motobombas BRANCO. Tecnologia brasileira de alto desempenho para cada necessidade.',
+    'fn-nav':'Navegação','fn-prod':'Produtos','fn-contact':'Contato',
+    'fl-inicio':'Início','fl-tienda':'Loja','fl-contacto':'Contato','fl-acerca':'Sobre nós',
+    'fc-slogan':'Tecnologia Brasileira'
+  }
+};
+function setLang(lang){
+  const t=translations[lang];
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  Object.entries(t).forEach(([id,val])=>{
+    const el=document.getElementById(id);
+    if(el) el.innerHTML=val;
+  });
+  localStorage.setItem('branco-lang',lang);
 }
+const savedLang=localStorage.getItem('branco-lang')||'es';
+setLang(savedLang);
 </script>
-
 </body>
 </html>
