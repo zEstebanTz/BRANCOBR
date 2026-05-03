@@ -115,14 +115,20 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 
             <div id="specs" class="tab-pane">
                 <div class="specs-list">
-                    <div class="spec-item"><span>Motor</span><span id="s-motor">(Gasolina) 4 TIEMPOS</span></div>
-                    <div class="spec-item"><span>Potencia</span><span id="s-power">6.5 HP (3600RPM)</span></div>
-                    <div class="spec-item"><span>Cilindrada</span><span id="s-cc">196 cc.</span></div>
-                    <div class="spec-item"><span>Caudal</span><span id="s-flow">600 Lts/min.</span></div>
-                    <div class="spec-item"><span>Altura Máx Total</span><span id="s-height">70 m</span></div>
-                    <div class="spec-item"><span>Diámetro Succión/Descarga</span><span id="s-diam">2 pulgadas</span></div>
-                    <div class="spec-item"><span>Arranque</span><span id="s-start">Tirador Retráctil (Manual)</span></div>
-                    <div class="spec-item"><span>Peso en Seco</span><span id="s-weight">23 kg</span></div>
+                    <div class="spec-item"><span>Tipo de bomba</span><span>Centrífuga autocebante</span></div>
+                    <div class="spec-item"><span>Diámetros</span><span>2" (pulgadas) Succión / Descarga</span></div>
+                    <div class="spec-item"><span>Altura máxima</span><span>28 metros</span></div>
+                    <div class="spec-item"><span>Altura de succión</span><span>8 metros</span></div>
+                    <div class="spec-item"><span>Caudal máximo</span><span>36,000 litros/hora</span></div>
+                    <div class="spec-item"><span>Motor</span><span id="s-motor">(Gasolina) 4 TIEMPOS OHV</span></div>
+                    <div class="spec-item"><span>Tipo de motor</span><span>Monocilíndrico</span></div>
+                    <div class="spec-item"><span>Arranque</span><span id="s-start">Manual con cuerda retráctil</span></div>
+                    <div class="spec-item"><span>Potencia máxima</span><span id="s-power">6.5 HP / 3600rpm</span></div>
+                    <div class="spec-item"><span>Combustible</span><span>Gasolina</span></div>
+                    <div class="spec-item"><span>Capacidad combustible</span><span>3.6 litros</span></div>
+                    <div class="spec-item"><span>Capacidad aceite</span><span>0.6 litros</span></div>
+                    <div class="spec-item"><span>Peso seco</span><span id="s-weight">23 kg</span></div>
+                    <div class="spec-item"><span>Dimensiones</span><span>485 x 380 x 405 mm</span></div>
                 </div>
             </div>
         </div>
@@ -209,21 +215,20 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
-// Objeto de traducciones para alternar entre Español y Portugués
 const translations = {
     es: {
         'btn-desc': 'Descripción',
         'btn-specs': 'Especificaciones',
         'txt-desc-main': 'Nuestra bomba de ALTA PRESION proporciona bajo consumo de combustible. Se usan para trasvasar gran cantidad de agua limpia a alta presión. Son ideales para cualquier actividad que requiera un llenado rápido en alta presión.',
-        's-motor': '(Gasolina) 4 TIEMPOS',
-        's-start': 'Tirador Retráctil (Manual)'
+        's-motor': '(Gasolina) 4 TIEMPOS OHV',
+        's-start': 'Manual con cuerda retráctil'
     },
     pt: {
         'btn-desc': 'Descrição',
         'btn-specs': 'Especificações',
         'txt-desc-main': 'Nossa bomba de ALTA PRESSÃO proporciona baixo consumo de combustível. São utilizadas para transferir grandes quantidades de água limpa a alta pressão. São ideais para qualquer atividade que exija enchimento rápido em alta pressão.',
-        's-motor': '(Gasolina) 4 TEMPOS',
-        's-start': 'Partida Retrátil (Manual)'
+        's-motor': '(Gasolina) 4 TEMPOS OHV',
+        's-start': 'Partida Manual Retrátil'
     }
 };
 
