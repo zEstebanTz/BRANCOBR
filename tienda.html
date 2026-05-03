@@ -10,17 +10,17 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hidden;}
 
-/* NAV */
+/* ======= NAV (CORREGIDA PARA MÓVIL) ======= */
 .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;background:rgba(17,17,17,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
 .nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
-.nav-links{display:flex;gap:36px;align-items:center;}
-.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--naranja);}
 .nav-lang{display:flex;gap:8px;}
 .lang-btn{background:none;border:1px solid rgba(255,255,255,0.25);padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,0.7);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
 .lang-btn:hover,.lang-btn.active{border-color:var(--naranja);color:var(--naranja);}
 
-/* PAGE HEADER */
+/* ======= PAGE HEADER ======= */
 .page-header{background:var(--negro);padding:120px 60px 60px;position:relative;overflow:hidden;}
 .page-header::before{content:'TIENDA';font-family:'Oswald',sans-serif;font-size:160px;font-weight:700;color:rgba(255,255,255,0.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:10px;white-space:nowrap;}
 .ph-inner{position:relative;}
@@ -31,10 +31,10 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .ph-bread a:hover{color:var(--naranja);}
 .ph-bread span{color:rgba(255,255,255,0.15);}
 
-/* SHOP LAYOUT */
+/* ======= SHOP LAYOUT ======= */
 .shop-wrap{display:grid;grid-template-columns:240px 1fr;gap:0;min-height:70vh;}
 
-/* SIDEBAR */
+/* ======= SIDEBAR ======= */
 .sidebar{background:var(--gris);padding:48px 32px;border-right:1px solid #e8e8e8;}
 .sb-title{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--negro);margin-bottom:18px;}
 .sb-divider{height:1px;background:#e0e0e0;margin:24px 0;}
@@ -46,14 +46,14 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .sb-info p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7;}
 .sb-info a{color:var(--naranja);text-decoration:none;font-size:12px;font-weight:600;display:block;margin-top:10px;}
 
-/* PRODUCTS AREA */
+/* ======= PRODUCTS AREA ======= */
 .products-area{padding:48px 48px;}
 .shop-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid #eee;}
 .shop-count{font-size:13px;color:#999;}
 .shop-count span{color:var(--negro);font-weight:600;}
 
-/* PRODUCT GRID */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:#e8e8e8;}
+/* ======= PRODUCT GRID ======= */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:#e8e8e8;border:1px solid #e8e8e8;}
 .prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;}
 .prod-img-box{height:260px;overflow:hidden;background:#f8f8f8;display:flex;align-items:center;justify-content:center;position:relative;}
 .prod-img-box img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
@@ -72,13 +72,13 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .prod-arrow{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid #f0f0f0;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--negro);transition:color 0.2s;}
 .prod-card:hover .prod-arrow{color:var(--naranja);}
 
-/* WHY BOTTOM */
+/* ======= WHY STRIP ======= */
 .why-strip{background:var(--negro);display:flex;justify-content:center;flex-wrap:wrap;}
 .ws-item{padding:20px 40px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);border-right:1px solid rgba(255,255,255,0.07);}
 .ws-item:last-child{border:none;}
 .ws-icon{color:var(--naranja);}
 
-/* FOOTER */
+/* ======= FOOTER ======= */
 .footer{background:#0d0d0d;padding:50px 60px 24px;}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 .f-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:5px;margin-bottom:12px;}
@@ -92,17 +92,30 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);}
 .footer-bot span{color:var(--naranja);}
 
+/* ======= RESPONSIVE (ARREGLADO) ======= */
 @media(max-width:900px){
-  .nav{padding:0 24px;}
-  .page-header{padding:100px 24px 40px;}
+  .nav{padding:0 20px; flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px;}
+  .nav-logo{font-size:20px; letter-spacing:3px;}
+  .nav-links{width:100%; order:3; justify-content:center; gap:15px; margin-top:10px;}
+  .nav-links a{font-size:10px; letter-spacing:1px;}
+  
+  .page-header{padding:120px 24px 40px;}
+  .page-header::before{font-size:80px;}
+  .ph-title{font-size:32px;}
+  
   .shop-wrap{grid-template-columns:1fr;}
-  .sidebar{display:none;}
-  .products-area{padding:32px 24px;}
+  .sidebar{display:none;} /* Oculto en móvil para priorizar productos */
+  .products-area{padding:30px 20px;}
+  
   .footer-top{grid-template-columns:1fr 1fr;}
 }
+
 @media(max-width:500px){
+  .nav-links{gap:10px;}
+  .nav-links a{font-size:9px;}
   .prod-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
+  .ws-item{width:100%; border-right:none; border-bottom:1px solid rgba(255,255,255,0.05); justify-content:center;}
 }
 </style>
 </head>
@@ -217,7 +230,6 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
           <div class="prod-desc-text" id="p4d">Alta Presión 17 HP — Máximo rendimiento con 90 m de altura total.</div>
           <div class="prod-tags">
             <span class="tag tag-orange" id="pt-nuevo">Potencia Pro</span>
-            <span class="tag tag-orange">Alta Presión</span>
           </div>
           <div class="prod-arrow"><span>Ver producto</span> →</div>
         </div>
@@ -291,7 +303,7 @@ const T={
     'p2d':'Alta Pressão 6.5 HP — Altura máxima de 70 m e sucção de 2".',
     'p3d':'Vazão 6.5 HP — Grande fluxo de 1000 Lts/min e sucção de 3".',
     'p4d':'Alta Pressão 17 HP — Máximo desempenho com 90 m de altura total.',
-    'pt-mas':'Vazão','pt-ap':'Alta Pressão','pt-nuevo':'Potência Pro','pa-ver':'Ver produto',
+    'pt-mas':'Vazão','pt-ap':'Alta Pressão','pt-nuevo':'Potência Pro','pa-ver':'Ver producto',
     'ws1':'Qualidade Garantida','ws4':'Assessoria Especializada',
     'fd':'Distribuidores oficiais de bombas de água BRANCO. Tecnologia brasilera de alto desempenho.',
     'fn1':'Navegação','fn2':'Produtos','fn3':'Contato',
@@ -301,7 +313,8 @@ const T={
 };
 function setLang(l){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  const btn = document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`);
+  if(btn) btn.classList.add('active');
   Object.entries(T[l]).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.innerHTML=v;});
   localStorage.setItem('branco-lang',l);
 }
