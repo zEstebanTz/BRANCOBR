@@ -10,7 +10,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hidden;}
 
-/* ======= NAV (CORREGIDA PARA MÓVIL) ======= */
+/* ======= NAV ======= */
 .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;background:rgba(17,17,17,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
 .nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
 .nav-links{display:flex;gap:30px;align-items:center;}
@@ -92,27 +92,22 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);}
 .footer-bot span{color:var(--naranja);}
 
-/* ======= RESPONSIVE (ARREGLADO) ======= */
+/* ======= RESPONSIVE ======= */
 @media(max-width:900px){
   .nav{padding:0 20px; flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px;}
   .nav-logo{font-size:20px; letter-spacing:3px;}
   .nav-links{width:100%; order:3; justify-content:center; gap:15px; margin-top:10px;}
   .nav-links a{font-size:10px; letter-spacing:1px;}
-  
   .page-header{padding:120px 24px 40px;}
   .page-header::before{font-size:80px;}
   .ph-title{font-size:32px;}
-  
   .shop-wrap{grid-template-columns:1fr;}
-  .sidebar{display:none;} /* Oculto en móvil para priorizar productos */
+  .sidebar{display:none;}
   .products-area{padding:30px 20px;}
-  
   .footer-top{grid-template-columns:1fr 1fr;}
 }
 
 @media(max-width:500px){
-  .nav-links{gap:10px;}
-  .nav-links a{font-size:9px;}
   .prod-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .ws-item{width:100%; border-right:none; border-bottom:1px solid rgba(255,255,255,0.05); justify-content:center;}
@@ -179,7 +174,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat" id="pc-cat">Bomba de Agua</div>
           <div class="prod-name">WP 20</div>
-          <div class="prod-desc-text" id="p1d">Caudalera 6.5 HP — Caudal de 600 Lts/min y altura de 30 m.</div>
+          <div class="prod-desc-text" id="p1d">6.5 HP — 600 Lts/min y altura de 30 m.</div>
           <div class="prod-tags">
             <span class="tag tag-orange" id="pt-mas">Caudalera</span>
           </div>
@@ -195,7 +190,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Bomba de Agua</div>
           <div class="prod-name">WP 20H</div>
-          <div class="prod-desc-text" id="p2d">Alta Presión 6.5 HP — Altura máxima de 70 m y succión de 2".</div>
+          <div class="prod-desc-text" id="p2d">6.5 HP — Altura máxima 70 m y succión 2".</div>
           <div class="prod-tags">
             <span class="tag tag-orange" id="pt-ap">Alta Presión</span>
           </div>
@@ -211,7 +206,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Bomba de Agua</div>
           <div class="prod-name">WP 30</div>
-          <div class="prod-desc-text" id="p3d">Caudalera 6.5 HP — Gran flujo de 1000 Lts/min y succión de 3".</div>
+          <div class="prod-desc-text" id="p3d">6.5 HP — Flujo de 1000 Lts/min y succión 3".</div>
           <div class="prod-tags">
             <span class="tag tag-orange">Caudalera</span>
           </div>
@@ -227,7 +222,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Bomba de Agua</div>
           <div class="prod-name">WP 30H</div>
-          <div class="prod-desc-text" id="p4d">Alta Presión 17 HP — Máximo rendimiento con 90 m de altura total.</div>
+          <div class="prod-desc-text" id="p4d">17 HP — Máximo rendimiento con 90 m de altura.</div>
           <div class="prod-tags">
             <span class="tag tag-orange" id="pt-nuevo">Potencia Pro</span>
           </div>
@@ -283,10 +278,10 @@ const T={
     'ph-tag':'Catálogo de Productos','ph-title':'Tienda','pb-home':'Inicio','pb-cur':'Tienda',
     'sb-t':'Categorías','sc-all':'Todas las bombas','si-t':'¿Necesitas ayuda?','si-p':'Escríbenos para asesoría personalizada sobre nuestros productos.',
     'st-label':'productos encontrados','pcta':'Ver Detalles','pc-cat':'Bomba de Agua',
-    'p1d':'Caudalera 6.5 HP — Caudal de 600 Lts/min y altura de 30 m.',
-    'p2d':'Alta Presión 6.5 HP — Altura máxima de 70 m y succión de 2".',
-    'p3d':'Caudalera 6.5 HP — Gran flujo de 1000 Lts/min y succión de 3".',
-    'p4d':'Alta Presión 17 HP — Máximo rendimiento con 90 m de altura total.',
+    'p1d':'6.5 HP — 600 Lts/min y altura de 30 m.',
+    'p2d':'6.5 HP — Altura máxima 70 m y succión 2".',
+    'p3d':'6.5 HP — Flujo de 1000 Lts/min y succión 3".',
+    'p4d':'17 HP — Máximo rendimiento con 90 m de altura.',
     'pt-mas':'Caudalera','pt-ap':'Alta Presión','pt-nuevo':'Potencia Pro','pa-ver':'Ver producto',
     'ws1':'Calidad Garantizada','ws4':'Asesoría Experta',
     'fd':'Distribuidores oficiales de bombas de agua BRANCO. Tecnología brasilera de alto rendimiento.',
@@ -299,11 +294,11 @@ const T={
     'ph-tag':'Catálogo de Produtos','ph-title':'Loja','pb-home':'Início','pb-cur':'Loja',
     'sb-t':'Categorias','sc-all':'Todas as bombas','si-t':'Precisa de ajuda?','si-p':'Escreva para assessoria personalizada sobre nossos produtos.',
     'st-label':'produtos encontrados','pcta':'Ver Detalhes','pc-cat':'Bomba de Água',
-    'p1d':'Vazão 6.5 HP — Vazão de 600 Lts/min e altura de 30 m.',
-    'p2d':'Alta Pressão 6.5 HP — Altura máxima de 70 m e sucção de 2".',
-    'p3d':'Vazão 6.5 HP — Grande fluxo de 1000 Lts/min e sucção de 3".',
-    'p4d':'Alta Pressão 17 HP — Máximo desempenho com 90 m de altura total.',
-    'pt-mas':'Vazão','pt-ap':'Alta Pressão','pt-nuevo':'Potência Pro','pa-ver':'Ver producto',
+    'p1d':'6.5 HP — 600 Lts/min e altura de 30 m.',
+    'p2d':'6.5 HP — Altura máxima 70 m e sucção 2".',
+    'p3d':'6.5 HP — Grande fluxo de 1000 Lts/min e sucção 3".',
+    'p4d':'17 HP — Máximo desempenho com 90 m de altura total.',
+    'pt-mas':'Vazão','pt-ap':'Alta Pressão','pt-nuevo':'Potência Pro','pa-ver':'Ver produto',
     'ws1':'Qualidade Garantida','ws4':'Assessoria Especializada',
     'fd':'Distribuidores oficiais de bombas de água BRANCO. Tecnologia brasilera de alto desempenho.',
     'fn1':'Navegação','fn2':'Produtos','fn3':'Contato',
