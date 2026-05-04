@@ -59,12 +59,21 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);}
 .footer-bot span{color:var(--naranja);}
 
+/* ======= MOBILE ADAPTATION ======= */
 @media(max-width:900px){
-  .nav{padding:0 20px; height:auto; padding-top:10px; padding-bottom:10px;}
-  .nav-links{width:100%; order:3; justify-content:center; gap:15px; margin-top:10px;}
+  .nav{padding:15px 20px; height:auto; flex-direction: column; gap:15px;}
+  .nav-links{width:100%; flex-wrap: wrap; justify-content:center; gap:10px;}
+  .nav-links a{font-size: 10px; letter-spacing: 1px;}
+  .page-header{padding:140px 20px 40px; text-align: center;}
+  .page-header::before{font-size: 80px; letter-spacing: 5px;}
   .shop-wrap{grid-template-columns:1fr;}
-  .sidebar{display:none;}
-  .products-area{padding:30px 20px;}
+  .sidebar{padding:20px; border-right: none; border-bottom: 1px solid #e8e8e8;}
+  .sb-cats{flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 5px;}
+  .sb-cats li a{font-size: 11px; padding: 5px 10px; border-left: none; border-bottom: 2px solid transparent;}
+  .sb-cats li a:hover, .sb-cats li a.active{border-left-color: transparent; border-bottom-color: var(--naranja);}
+  .products-area{padding:20px 10px;}
+  .prod-grid{grid-template-columns: 1fr;}
+  .footer{padding:40px 20px; text-align: center;}
 }
 </style>
 </head>
@@ -189,3 +198,4 @@ setLang(localStorage.getItem('branco-lang')||'es');
 </script>
 </body>
 </html>
+
