@@ -47,7 +47,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .prod-info{padding:18px 20px 22px;}
 .prod-cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:6px;}
 .prod-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--negro);letter-spacing:0.5px;}
-.prod-desc-text{font-size:13px;color:#777;margin-top:4px;font-weight:600;}
+.prod-desc-text{font-size:12px;color:#777;margin-top:4px;font-weight:600;line-height:1.4;}
 .prod-tags{display:flex;gap:6px;margin-top:10px;}
 .tag{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;}
 .tag-orange{background:#fff5f0;color:var(--naranja);}
@@ -111,7 +111,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat" id="pc-cat">Motobomba</div>
           <div class="prod-name">WP 20</div>
-          <div class="prod-desc-text" id="p1d">Potencia: 6.5 HP</div>
+          <div class="prod-desc-text" id="p1d">6.5 HP — 196 cc</div>
           <div class="prod-tags"><span class="tag tag-orange" id="pt-ap1">Alta Presión</span></div>
           <div class="prod-arrow"><span id="pa-ver">Ver producto</span> →</div>
         </div>
@@ -122,7 +122,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Motobomba</div>
           <div class="prod-name">WP 20H</div>
-          <div class="prod-desc-text" id="p2d">Potencia: 6.5 HP</div>
+          <div class="prod-desc-text" id="p2d">6.5 HP — 196 cc</div>
           <div class="prod-tags"><span class="tag tag-orange" id="pt-ap2">Alta Presión</span></div>
           <div class="prod-arrow"><span>Ver producto</span> →</div>
         </div>
@@ -133,7 +133,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Motobomba</div>
           <div class="prod-name">WP 30</div>
-          <div class="prod-desc-text" id="p3d">Potencia: 6.5 HP</div>
+          <div class="prod-desc-text" id="p3d">6.5 HP — 196 cc</div>
           <div class="prod-tags"><span class="tag tag-orange" id="pt-ap3">Alta Presión</span></div>
           <div class="prod-arrow"><span>Ver producto</span> →</div>
         </div>
@@ -144,7 +144,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
         <div class="prod-info">
           <div class="prod-cat">Motobomba</div>
           <div class="prod-name">WP 30H</div>
-          <div class="prod-desc-text" id="p4d">Potencia: 17 HP</div>
+          <div class="prod-desc-text" id="p4d">17 HP — 450 cc</div>
           <div class="prod-tags"><span class="tag tag-orange" id="pt-ap4">Alta Presión</span></div>
           <div class="prod-arrow"><span>Ver producto</span> →</div>
         </div>
@@ -164,14 +164,16 @@ const T={
   es:{
     'n-inicio':'Inicio','n-tienda':'Tienda','n-contacto':'Contactos','n-acerca':'Acerca de nosotros',
     'ph-tag':'Catálogo de Productos','ph-title':'Tienda','sb-t':'Categorías','sc-all':'Todas las motobombas',
-    'pc-cat':'Motobomba','p1d':'Potencia: 6.5 HP','p2d':'Potencia: 6.5 HP','p3d':'Potencia: 6.5 HP','p4d':'Potencia: 17 HP',
+    'pc-cat':'Motobomba',
+    'p1d':'6.5 HP — 196 cc','p2d':'6.5 HP — 196 cc','p3d':'6.5 HP — 196 cc','p4d':'17 HP — 450 cc',
     'pt-ap1':'Alta Presión','pt-ap2':'Alta Presión','pt-ap3':'Alta Presión','pt-ap4':'Alta Presión',
     'pa-ver':'Ver producto','fslogan':'Tecnología Brasilera'
   },
   pt:{
     'n-inicio':'Início','n-tienda':'Loja','n-contacto':'Contato','n-acerca':'Sobre nós',
     'ph-tag':'Catálogo de Produtos','ph-title':'Loja','sb-t':'Categorias','sc-all':'Todas as motobombas',
-    'pc-cat':'Motobomba','p1d':'Potência: 6.5 HP','p2d':'Potência: 6.5 HP','p3d':'Potência: 6.5 HP','p4d':'Potência: 17 HP',
+    'pc-cat':'Motobomba',
+    'p1d':'6.5 HP — 196 cc','p2d':'6.5 HP — 196 cc','p3d':'6.5 HP — 196 cc','p4d':'17 HP — 450 cc',
     'pt-ap1':'Alta Pressão','pt-ap2':'Alta Pressão','pt-ap3':'Alta Pressão','pt-ap4':'Alta Pressão',
     'pa-ver':'Ver produto','fslogan':'Tecnologia Brasilera'
   }
