@@ -92,7 +92,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
 .footer-bot{border-top:1px solid #1c1c1c;padding-top:20px;font-size:11px;color:rgba(255,255,255,0.2);}
 .footer-bot span{color:var(--naranja);}
 
-/* ======= RESPONSIVE (ARREGLADO) ======= */
+/* ======= RESPONSIVE (ARREGLADO PARA MÓVIL Y FOOTER) ======= */
 @media(max-width:900px){
   .nav{padding:0 20px; flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px;}
   .nav-logo{font-size:20px; letter-spacing:3px;}
@@ -100,22 +100,24 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;overflow-x:hi
   .nav-links a{font-size:10px; letter-spacing:1px;}
   
   .page-header{padding:120px 24px 40px;}
-  .page-header::before{font-size:80px;}
+  .page-header::before{font-size:80px;} /* Ajuste de texto de fondo para móvil */
   .ph-title{font-size:32px;}
   
   .shop-wrap{grid-template-columns:1fr;}
-  .sidebar{display:none;} /* Oculto en móvil para priorizar productos */
+  .sidebar{display:none;} 
   .products-area{padding:30px 20px;}
   
-  .footer-top{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns: 1fr 1fr; gap: 30px;}
+  .footer{padding: 40px 20px 20px;}
 }
 
 @media(max-width:500px){
   .nav-links{gap:10px;}
   .nav-links a{font-size:9px;}
   .prod-grid{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr;}
-  .ws-item{width:100%; border-right:none; border-bottom:1px solid rgba(255,255,255,0.05); justify-content:center;}
+  .footer-top{grid-template-columns:1fr;} /* Footer en una sola columna */
+  .ws-item{width:100%; border-right:none; border-bottom:1px solid rgba(255,255,255,0.05); justify-content:center; padding: 15px;}
+  .why-strip{flex-direction: column;}
 }
 </style>
 </head>
@@ -297,8 +299,8 @@ const T={
   pt:{
     'n-inicio':'Início','n-tienda':'Loja','n-contacto':'Contato','n-acerca':'Sobre nós',
     'ph-tag':'Catálogo de Produtos','ph-title':'Loja','pb-home':'Início','pb-cur':'Loja',
-    'sb-t':'Categorias','sc-all':'Todas as bombas','si-t':'Precisa de ajuda?','si-p':'Escreva para assessoria personalizada sobre nossos produtos.',
-    'st-label':'produtos encontrados','pcta':'Ver Detalhes','pc-cat':'Bomba de Água',
+    'sb-t':'Categorias','sc-all':'Todas as bombas','si-t':'Precisa de ajuda?','si-p':'Escreva para assessoria personalizada sobre nossos productos.',
+    'st-label':'productos encontrados','pcta':'Ver Detalhes','pc-cat':'Bomba de Água',
     'p1d':'Vazão 6.5 HP — Vazão de 600 Lts/min e altura de 30 m.',
     'p2d':'Alta Pressão 6.5 HP — Altura máxima de 70 m e sucção de 2".',
     'p3d':'Vazão 6.5 HP — Grande fluxo de 1000 Lts/min e sucção de 3".',
