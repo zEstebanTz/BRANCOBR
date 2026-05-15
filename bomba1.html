@@ -8,430 +8,394 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --naranja:#ff6600;
-    --negro:#111111;
-    --gris:#f7f5f2;
-    --texto:#333;
-}
+:root{--naranja:#ff6600;--negro:#111111;--gris:#f7f5f2;--texto:#333;}
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Open Sans',sans-serif;
-    background:#fff;
-    color:var(--texto);
-    overflow-x:hidden;
+font-family:'Open Sans',sans-serif;
+background:#fff;
+color:var(--texto);
+overflow-x:hidden;
 }
 
 /* ======= NAV REGRESAR ======= */
 .nav-back{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 60px;
-    height:70px;
-    z-index:1000;
-    background:rgba(17,17,17,0.95);
-    border-bottom:1px solid rgba(255,255,255,0.1);
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 60px;
+height:70px;
+z-index:1000;
+background:rgba(17,17,17,0.95);
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .btn-back{
-    color:#fff;
-    text-decoration:none;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    transition:color 0.2s;
+color:#fff;
+text-decoration:none;
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+display:flex;
+align-items:center;
+gap:10px;
+transition:color 0.2s;
 }
 
 .btn-back:hover{
-    color:var(--naranja);
+color:var(--naranja);
 }
 
 .nav-logo{
-    font-family:'Oswald',sans-serif;
-    font-size:24px;
-    font-weight:700;
-    color:#fff;
-    letter-spacing:5px;
-    text-decoration:none;
+font-family:'Oswald',sans-serif;
+font-size:24px;
+font-weight:700;
+color:#fff;
+letter-spacing:5px;
+text-decoration:none;
 }
 
 /* ======= DETALLE DE PRODUCTO ======= */
 .product-detail-section{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    background:var(--negro);
-    min-height:90vh;
-    padding-top:70px;
+display:grid;
+grid-template-columns:1fr 1fr;
+background:var(--negro);
+min-height:90vh;
+padding-top:70px;
 }
 
 /* Lado Imagen */
 .product-visual{
-    position:relative;
-    background:#0d1f35;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    padding:40px 20px;
+position:relative;
+background:#0d1f35;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
 }
 
 .product-visual::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:url('imagen/reemplazar1.jpg') center/cover;
-    opacity:0.15;
+content:'';
+position:absolute;
+inset:0;
+background:url('imagen/reemplazar1.jpg') center/cover;
+opacity:0.15;
+}
+
+.product-visual img{
+position:relative;
+z-index:2;
+width:80%;
+max-width:480px;
+filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));
 }
 
 .hero-eyebrow{
-    position:absolute;
-    top:40px;
-    left:60px;
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:var(--naranja);
-    font-weight:600;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    z-index:3;
+position:absolute;
+top:40px;
+left:60px;
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:var(--naranja);
+font-weight:600;
+display:flex;
+align-items:center;
+gap:10px;
+z-index:3;
 }
 
 .hero-eyebrow::before{
-    content:'';
-    display:block;
-    width:28px;
-    height:2px;
-    background:var(--naranja);
-}
-
-/* NUEVO CONTENEDOR DE IMÁGENES */
-.product-images{
-    position:relative;
-    z-index:2;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-}
-
-/* IMAGEN PRINCIPAL */
-.main-product{
-    width:80%;
-    max-width:480px;
-    filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));
-}
-
-/* IMAGEN CURVA */
-.curve-img{
-    width:70%;
-    max-width:420px;
-    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.35));
+content:'';
+display:block;
+width:28px;
+height:2px;
+background:var(--naranja);
 }
 
 /* Lado Texto */
 .product-info-box{
-    padding:80px 60px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    background:linear-gradient(to right, #111, #161616);
+padding:80px 60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background:linear-gradient(to right, #111, #161616);
 }
 
 .product-title{
-    font-family:'Oswald',sans-serif;
-    font-size:54px;
-    font-weight:700;
-    line-height:1.1;
-    color:#fff;
-    text-transform:uppercase;
-    margin-bottom:15px;
+font-family:'Oswald',sans-serif;
+font-size:54px;
+font-weight:700;
+line-height:1.1;
+color:#fff;
+text-transform:uppercase;
+margin-bottom:15px;
 }
 
 .product-title span{
-    color:var(--naranja);
+color:var(--naranja);
 }
 
 .stock-status{
-    font-size:11px;
-    letter-spacing:3px;
-    color:rgba(255,255,255,0.4);
-    text-transform:uppercase;
-    margin-bottom:30px;
+font-size:11px;
+letter-spacing:3px;
+color:rgba(255,255,255,0.4);
+text-transform:uppercase;
+margin-bottom:30px;
 }
 
 /* Tabs */
 .tab-btns{
-    display:flex;
-    gap:30px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    margin-bottom:25px;
+display:flex;
+gap:30px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+margin-bottom:25px;
 }
 
 .tab-btns button{
-    background:none;
-    border:none;
-    color:rgba(255,255,255,0.5);
-    font-family:'Oswald',sans-serif;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    padding-bottom:12px;
-    cursor:pointer;
-    transition:0.3s;
+background:none;
+border:none;
+color:rgba(255,255,255,0.5);
+font-family:'Oswald',sans-serif;
+font-size:13px;
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+padding-bottom:12px;
+cursor:pointer;
+transition:0.3s;
 }
 
 .tab-btns button.active{
-    color:var(--naranja);
-    border-bottom:2px solid var(--naranja);
+color:var(--naranja);
+border-bottom:2px solid var(--naranja);
 }
 
 .tab-pane{
-    display:none;
-    font-size:14px;
-    color:rgba(255,255,255,0.6);
-    line-height:1.8;
+display:none;
+font-size:14px;
+color:rgba(255,255,255,0.6);
+line-height:1.8;
 }
 
 .tab-pane.active{
-    display:block;
+display:block;
 }
 
 .specs-list{
-    list-style:none;
+list-style:none;
 }
 
 .spec-item{
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    border-bottom:1px solid rgba(255,255,255,0.05);
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .spec-item span:first-child{
-    color:var(--naranja);
-    font-family:'Oswald',sans-serif;
-    font-size:11px;
-    letter-spacing:1px;
-    text-transform:uppercase;
+color:var(--naranja);
+font-family:'Oswald',sans-serif;
+font-size:11px;
+letter-spacing:1px;
+text-transform:uppercase;
 }
 
 .spec-item span:last-child{
-    color:#fff;
-    font-size:13px;
+color:#fff;
+font-size:13px;
 }
 
-/* ======= SECCIONES ======= */
+/* ======= SECCIONES HOME (REUTILIZADAS) ======= */
 .section{
-    padding:90px 60px;
+padding:90px 60px;
 }
 
 .sec-head{
-    text-align:center;
-    margin-bottom:60px;
+text-align:center;
+margin-bottom:60px;
 }
 
 .sec-tag{
-    font-size:11px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--naranja);
-    font-weight:600;
-    margin-bottom:10px;
+font-size:11px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--naranja);
+font-weight:600;
+margin-bottom:10px;
 }
 
 .sec-title{
-    font-family:'Oswald',sans-serif;
-    font-size:34px;
-    font-weight:700;
-    letter-spacing:-0.5px;
-    color:var(--negro);
-    text-transform:uppercase;
+font-family:'Oswald',sans-serif;
+font-size:34px;
+font-weight:700;
+letter-spacing:-0.5px;
+color:var(--negro);
+text-transform:uppercase;
 }
 
 .sec-desc{
-    font-size:14px;
-    color:#888;
-    margin-top:12px;
-    max-width:500px;
-    margin-left:auto;
-    margin-right:auto;
-    line-height:1.7;
+font-size:14px;
+color:#888;
+margin-top:12px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.7;
 }
 
 /* PRODUCTOS */
 .prods-wrap{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:1px;
-    background:#e0e0e0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:1px;
+background:#e0e0e0;
 }
 
 .prod-card{
-    background:#fff;
-    display:block;
-    text-decoration:none;
-    color:inherit;
-    position:relative;
-    overflow:hidden;
+background:#fff;
+display:block;
+text-decoration:none;
+color:inherit;
+position:relative;
+overflow:hidden;
 }
 
 .prod-img-box{
-    height:280px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#f5f5f5;
+height:280px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f5f5f5;
 }
 
 .prod-img-box img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.6s;
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s;
 }
 
 .prod-card:hover .prod-img-box img{
-    transform:scale(1.08);
+transform:scale(1.08);
 }
 
 .prod-info{
-    padding:20px;
+padding:20px;
 }
 
 .prod-name{
-    font-family:'Oswald',sans-serif;
-    font-size:16px;
-    font-weight:600;
-    text-transform:uppercase;
+font-family:'Oswald',sans-serif;
+font-size:16px;
+font-weight:600;
+text-transform:uppercase;
 }
 
 /* POR QUÉ ELEGIRNOS */
 .why-section{
-    background:var(--negro);
-    padding:90px 60px;
+background:var(--negro);
+padding:90px 60px;
 }
 
 .why-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:1px;
-    background:#1f1f1f;
-    margin-top:50px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:1px;
+background:#1f1f1f;
+margin-top:50px;
 }
 
 .why-card{
-    background:var(--negro);
-    padding:40px;
+background:var(--negro);
+padding:40px;
 }
 
 .why-ico{
-    width:40px;
-    height:40px;
-    background:var(--naranja);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:20px;
-    font-weight:bold;
+width:40px;
+height:40px;
+background:var(--naranja);
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+font-weight:bold;
 }
 
 .why-ttl{
-    font-family:'Oswald',sans-serif;
-    font-size:14px;
-    color:#fff;
-    text-transform:uppercase;
-    margin-bottom:10px;
-    letter-spacing:1px;
+font-family:'Oswald',sans-serif;
+font-size:14px;
+color:#fff;
+text-transform:uppercase;
+margin-bottom:10px;
+letter-spacing:1px;
 }
 
 .why-txt{
-    font-size:13px;
-    color:rgba(255,255,255,0.4);
-    line-height:1.7;
+font-size:13px;
+color:rgba(255,255,255,0.4);
+line-height:1.7;
 }
 
-/* FOOTER */
+/* FOOTER ORIGINAL */
 .footer{
-    background:#0d0d0d;
-    padding:60px 60px 30px;
-    color:#fff;
+background:#0d0d0d;
+padding:60px 60px 30px;
+color:#fff;
 }
 
 .footer-top{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
 }
 
 .f-brand{
-    font-family:'Oswald',sans-serif;
-    font-size:24px;
-    letter-spacing:5px;
-    margin-bottom:15px;
+font-family:'Oswald',sans-serif;
+font-size:24px;
+letter-spacing:5px;
+margin-bottom:15px;
 }
 
 .f-desc{
-    font-size:13px;
-    color:rgba(255,255,255,0.3);
-    line-height:1.8;
+font-size:13px;
+color:rgba(255,255,255,0.3);
+line-height:1.8;
 }
 
 .f-list{
-    list-style:none;
-    margin-top:15px;
+list-style:none;
+margin-top:15px;
 }
 
 .f-list a{
-    color:rgba(255,255,255,0.3);
-    text-decoration:none;
-    font-size:13px;
+color:rgba(255,255,255,0.3);
+text-decoration:none;
+font-size:13px;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
+.product-detail-section{
+grid-template-columns:1fr;
+}
 
-    .product-detail-section{
-        grid-template-columns:1fr;
-    }
+.product-visual{
+height:400px;
+}
 
-    .product-visual{
-        min-height:500px;
-    }
-
-    .prods-wrap,
-    .why-grid,
-    .footer-top{
-        grid-template-columns:1fr;
-    }
-
-    .hero-eyebrow{
-        left:25px;
-    }
-
-    .product-info-box{
-        padding:60px 30px;
-    }
-
-    .product-title{
-        font-size:42px;
-    }
+.prods-wrap,
+.why-grid,
+.footer-top{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
@@ -439,100 +403,168 @@ body{
 <body>
 
 <nav class="nav-back">
-    <a href="index.html" class="btn-back">← Volver al Inicio</a>
-    <a href="index.html" class="nav-logo">BRANCO</a>
+<a href="index.html" class="btn-back">← Volver al Inicio</a>
+<a href="index.html" class="nav-logo">BRANCO</a>
 </nav>
 
 <section class="product-detail-section">
 
-    <!-- IMÁGENES -->
-    <div class="product-visual">
+<div class="product-visual">
 
-        <div class="hero-eyebrow">Tecnología Brasilera</div>
+<div class="hero-eyebrow">Tecnología Brasilera</div>
 
-        <div class="product-images">
-            <img src="imagen/bomba1.png" alt="WP 20" class="main-product">
+<div style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:30px;">
 
-            <img src="imagen/curva1.png" alt="Curva WP 20" class="curve-img">
-        </div>
+<img src="imagen/bomba1.png" alt="WP 20"
+style="width:80%; max-width:480px; filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));">
 
-    </div>
+<img src="imagen/curva1.png" alt="Curva WP 20"
+style="width:95%; max-width:620px; margin-top:10px; filter:drop-shadow(0 10px 35px rgba(0,0,0,0.35));">
 
-    <!-- TEXTO -->
-    <div class="product-info-box">
+</div>
 
-        <h1 class="product-title">
-            MOTOBOMBA<br>
-            <span>WP 20</span>
-        </h1>
+</div>
 
-        <div class="stock-status">Disponible</div>
+<div class="product-info-box">
 
-        <div class="tabs">
+<h1 class="product-title">
+MOTOBOMBA<br><span>WP 20</span>
+</h1>
 
-            <div class="tab-btns">
-                <button class="active" onclick="openTab(event, 'desc')">Descripción</button>
+<div class="stock-status">Disponible</div>
 
-                <button onclick="openTab(event, 'specs')">Especificaciones</button>
-            </div>
+<div class="tabs">
 
-            <div id="desc" class="tab-pane active">
-                <p>
-                    Nuestra bomba de CAUDALERAS proporciona bajo consumo de combustible.
-                    Se usan para trasvasar gran cantidad de agua limpia a baja presión.
-                </p>
+<div class="tab-btns">
+<button class="active" onclick="openTab(event, 'desc')">Descripción</button>
+<button onclick="openTab(event, 'specs')">Especificaciones</button>
+</div>
 
-                <p style="margin-top:15px;">
-                    Son ideales para cualquier actividad que requiera un llenado rápido en baja presión,
-                    optimizando el tiempo y el rendimiento del motor.
-                </p>
-            </div>
+<div id="desc" class="tab-pane active">
+<p>Nuestra bomba de CAUDALERAS proporciona bajo consumo de combustible. Se usan para trasvasar gran cantidad de agua limpia a baja presión.</p>
 
-            <div id="specs" class="tab-pane">
+<p style="margin-top:15px;">
+Son ideales para cualquier actividad que requiera un llenado rápido en baja presión, optimizando el tiempo y el rendimiento del motor.
+</p>
+</div>
 
-                <div class="specs-list">
+<div id="specs" class="tab-pane">
 
-                    <div class="spec-item">
-                        <span>Tipo de motor</span>
-                        <span>Monocilíndrico 4 tiempos</span>
-                    </div>
+<div class="specs-list">
 
-                    <div class="spec-item">
-                        <span>Potencia</span>
-                        <span>6.5 HP</span>
-                    </div>
+<div class="product-specs-sheet">
 
-                    <div class="spec-item">
-                        <span>Caudal</span>
-                        <span>650 Lts/min</span>
-                    </div>
+<div class="product-specs-sheet">
 
-                    <div class="spec-item">
-                        <span>Altura máxima</span>
-                        <span>30 m</span>
-                    </div>
+<div class="spec-cat-title">MOTOR</div>
 
-                </div>
+<div class="spec-item">
+<span>Tipo de motor</span>
+<span>Monocilíndrico, (Gasolina) 4 TIEMPOS</span>
+</div>
 
-            </div>
+<div class="spec-item">
+<span>Potencia Motor</span>
+<span>6.5 HP (3600RPM)</span>
+</div>
 
-        </div>
+<div class="spec-item">
+<span>Encendido</span>
+<span>Transistorizado</span>
+</div>
 
-    </div>
+<div class="spec-item">
+<span>Arranque</span>
+<span>Tirador Retráctil (Manual)</span>
+</div>
 
+<div class="spec-item">
+<span>Cilindrada</span>
+<span>196 cc</span>
+</div>
+
+<div class="spec-cat-title">BOMBA DE AGUA</div>
+
+<div class="spec-item">
+<span>Tipo de Bomba</span>
+<span>Centrifuga Auto Cebante</span>
+</div>
+
+<div class="spec-item">
+<span>Caudal</span>
+<span>650 Lts/min.</span>
+</div>
+
+<div class="spec-item">
+<span>Diámetro de Succión</span>
+<span>2 pulgadas</span>
+</div>
+
+<div class="spec-item">
+<span>Diámetro de Descarga</span>
+<span>2 pulgadas</span>
+</div>
+
+<div class="spec-item">
+<span>Altura Máxima Total</span>
+<span>30 m</span>
+</div>
+
+<div class="spec-item">
+<span>Altura Máxima de Succión</span>
+<span>8 m</span>
+</div>
+
+<div class="spec-cat-title">DIMENSIONES</div>
+
+<div class="spec-item">
+<span>Peso en Seco</span>
+<span>23 kg</span>
+</div>
+
+<div class="spec-item">
+<span>CHASIS:</span>
+<span>Tipo jaula metálico reforzado</span>
+</div>
+
+<div class="spec-cat-title">OTRAS ESPECIFICACIONES</div>
+
+<div class="spec-item">
+<span>Combustible</span>
+<span>Gasolina</span>
+</div>
+
+<div class="spec-item">
+<span>Depósito de Gasolina</span>
+<span>3,6 litros</span>
+</div>
+
+<div class="spec-item">
+<span>Aceite de Motor</span>
+<span>15W-140</span>
+</div>
+
+<div class="spec-item">
+<span>Capacidad de Tanque de Aceite</span>
+<span>0,6 litros</span>
+</div>
+
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <script>
 function openTab(evt, tabName) {
+let contents = document.querySelectorAll(".tab-pane");
+let buttons = document.querySelectorAll(".tab-btns button");
 
-    let contents = document.querySelectorAll(".tab-pane");
-    let buttons = document.querySelectorAll(".tab-btns button");
+contents.forEach(c => c.classList.remove("active"));
+buttons.forEach(b => b.classList.remove("active"));
 
-    contents.forEach(c => c.classList.remove("active"));
-    buttons.forEach(b => b.classList.remove("active"));
-
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
+document.getElementById(tabName).classList.add("active");
+evt.currentTarget.classList.add("active");
 }
 </script>
 
