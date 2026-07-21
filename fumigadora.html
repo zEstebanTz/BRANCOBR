@@ -20,7 +20,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .product-detail-section{display:grid;grid-template-columns:1fr 1fr;background:var(--negro);min-height:90vh;padding-top:70px;}
 
 /* Lado Imagen */
-.product-visual{position:relative;background:#0d1f35;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-visual{position:relative;background:#0d1f35;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:40px 20px;}
 .product-visual::before{content:'';position:absolute;inset:0;background:url('imagen/reemplazar1.jpg') center/cover;opacity:0.15;}
 .product-visual img{position:relative;z-index:2;width:80%;max-width:480px;filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));}
 
@@ -34,7 +34,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .stock-status{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:30px;}
 
 /* Tabs */
-.tab-btns{display:flex;gap:30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:25px;}
+.tab-btns{display:flex;gap:30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:25px;flex-wrap:wrap;}
 .tab-btns button{background:none;border:none;color:rgba(255,255,255,0.5);font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding-bottom:12px;cursor:pointer;transition:0.3s;}
 .tab-btns button.active{color:var(--naranja);border-bottom:2px solid var(--naranja);}
 
@@ -44,7 +44,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .specs-list{list-style:none;}
 .spec-cat-title{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:18px 0 6px 0;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,0.15);}
 .spec-cat-title:first-child{margin-top:0;}
-.spec-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.spec-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:15px;}
 .spec-item span:first-child{color:var(--naranja);font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
 .spec-item span:last-child{color:#fff;font-size:13px;text-align:right;}
 
@@ -84,10 +84,25 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .f-list{list-style:none;margin-top:15px;}
 .f-list a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;}
 
+/* ======= REGLAS RESPONSIVAS PARA MÓVILES Y TABLETS ======= */
 @media(max-width:900px){
+    .nav-back{padding:0 20px;}
     .product-detail-section{grid-template-columns:1fr;}
-    .product-visual{height:400px;}
-    .prods-wrap, .why-grid, .footer-top{grid-template-columns:1fr;}
+    .product-visual{height:350px;}
+    .hero-eyebrow{left:20px; top:20px;}
+    .product-info-box{padding:40px 20px;}
+    .product-title{font-size:36px;}
+    .section, .why-section, .footer{padding:60px 20px;}
+    .prods-wrap{grid-template-columns:repeat(2,1fr);}
+    .why-grid, .footer-top{grid-template-columns:1fr;}
+}
+
+@media(max-width:500px){
+    .prods-wrap{grid-template-columns:1fr;}
+    .tab-btns{gap:15px;}
+    .tab-btns button{font-size:11px; padding-bottom:8px;}
+    .spec-item{flex-direction:column; gap:2px;}
+    .spec-item span:last-child{text-align:left;}
 }
 </style>
 </head>
