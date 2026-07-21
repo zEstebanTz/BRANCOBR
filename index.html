@@ -61,14 +61,14 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 
 /* ======= SECTION BASE ======= */
 .section{padding:90px 60px;}
-.sec-head{text-align:center;margin-bottom:60px;}
+.sec-head{text-align:center;margin-bottom:40px;}
 .sec-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
 .sec-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;letter-spacing:-0.5px;color:var(--negro);text-transform:uppercase;}
 .sec-desc{font-size:14px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
 /* ======= PRODUCTOS GRID ======= */
-.prods-wrap{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1px;background:#e0e0e0;}
-.prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;}
+.prods-wrap{display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));gap:15px;padding:0 60px;}
+.prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;border:1px solid #e8e8e8;transition:all 0.3s;}
 .prod-img-box{height:280px;overflow:hidden;background:#f5f5f5;position:relative;display:flex;align-items:center;justify-content:center;}
 .prod-img-box img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
 .prod-card:hover .prod-img-box img{transform:scale(1.08);}
@@ -80,6 +80,22 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .prod-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--negro);}
 .prod-desc{font-size:12px;color:#999;margin-top:4px;}
 .prod-badge{display:inline-block;margin-top:8px;background:#fff5f0;color:var(--naranja);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 9px;}
+
+/* SEPARADORES DE CATEGORÍA */
+.cat-divider-title{
+  grid-column: 1 / -1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--negro);
+  letter-spacing: 1.5px;
+  padding: 15px 0 8px 0;
+  border-bottom: 2px solid var(--naranja);
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.cat-divider-title:first-child{ margin-top: 0; }
 
 /* ======= ABOUT ======= */
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;}
@@ -144,6 +160,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   .strip{flex-wrap:wrap;}
   .strip-item{padding:12px 20px; width:50%; border-right:none; justify-content:center;}
   .section{padding:60px 20px;}
+  .prods-wrap{padding:0 20px;}
   .about-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
@@ -155,6 +172,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   .hero-btns{flex-direction:column;}
   .btn-fill, .btn-outline{width:100%; text-align:center;}
   .strip-item{width:100%; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .prods-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .footer-bot{flex-direction:column; gap:10px; text-align:center;}
@@ -216,7 +234,11 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
     <h2 class="sec-title" id="pt-title">Nuestros Productos</h2>
     <p class="sec-desc" id="pt-desc">Soluciones de bombeo y fumigación de alto rendimiento para agricultura, construcción y uso profesional.</p>
   </div>
+  
   <div class="prods-wrap">
+    <!-- SECCIÓN 1: MOTOBOMBAS -->
+    <div class="cat-divider-title" id="idx-cat-bomba">Motobombas</div>
+
     <a href="bomba1.html" class="prod-card">
       <div class="prod-img-box"><img src="imagen/bomba1.png" alt="WP 20"></div>
       <div class="prod-hover"><div class="prod-cta" id="pc-btn">Ver Detalles</div></div>
@@ -250,6 +272,10 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
         <div class="prod-desc" id="pc4-d">Motobomba 3 pulgadas alta presión</div>
       </div>
     </a>
+
+    <!-- SECCIÓN 2: FUMIGADORAS -->
+    <div class="cat-divider-title" id="idx-cat-fumigadora">Fumigadoras</div>
+
     <a href="fumigadora.html" class="prod-card">
       <div class="prod-img-box"><img src="imagen/fumigadora.png" alt="Fumigadora BR2T-14L"></div>
       <div class="prod-hover"><div class="prod-cta">Ver Detalles</div></div>
@@ -358,7 +384,7 @@ function goTo(n){
 setInterval(()=>goTo(cur+1), 5000);
 dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.i)));
 
-// LANGUAGE
+// TRADUCCIONES DINÁMICAS (ESPAÑOL / PORTUGUÉS)
 const translations={
   es:{
     'nav-inicio':'Inicio','nav-tienda':'Tienda','nav-contacto':'Contactos','nav-acerca':'Acerca de nosotros',
@@ -368,6 +394,7 @@ const translations={
     'hs-prod':'Productos','hs-cal':'Calidad',
     's1':'Calidad Garantizada','s4':'Asesoría Experta',
     'pt-tag':'Catálogo','pt-title':'Nuestros Productos','pt-desc':'Soluciones de bombeo y fumigación de alto rendimiento para agricultura, construcción y uso profesional.',
+    'idx-cat-bomba':'Motobombas','idx-cat-fumigadora':'Fumigadoras',
     'pc-btn':'Ver Detalles','pc1-d':'Motobomba 2 pulgadas alta presión','pc2-d':'Motobomba 2 pulgadas alta presión','pc3-d':'Motobomba 3 pulgadas alta presión','pc4-d':'Motobomba 3 pulgadas alta presión','pc5-d':'Fumigadora de cañón 3.5 HP 14L','pc-badge':'Más vendido','pc-nuevo':'Nuevo',
     'av-tag':'Desde Brasil','av-sub':'Alto Rendimiento',
     'ab-tag':'Quiénes somos','ab-title':'Tecnología Brasilera de Alto Rendimiento',
@@ -391,6 +418,7 @@ const translations={
     'hs-prod':'Produtos','hs-cal':'Qualidade',
     's1':'Qualidade Garantida','s4':'Assessoria Especializada',
     'pt-tag':'Catálogo','pt-title':'Nossos Produtos','pt-desc':'Soluções de bombeamento e pulverização de alto desempenho para agricultura, construção e uso profissional.',
+    'idx-cat-bomba':'Motobombas','idx-cat-fumigadora':'Pulverizadores',
     'pc-btn':'Ver Detalhes','pc1-d':'Motobomba 2 polegadas alta pressão','pc2-d':'Motobomba 2 polegadas alta pressão','pc3-d':'Motobomba 3 polegadas alta pressão','pc4-d':'Motobomba 3 polegadas alta pressão','pc5-d':'Atomizador costal 3.5 HP 14L','pc-badge':'Mais vendido','pc-nuevo':'Novo',
     'av-tag':'Do Brasil','av-sub':'Alto Desempenho',
     'ab-tag':'Quem somos','ab-title':'Tecnologia Brasileira de Alto Desempenho',
