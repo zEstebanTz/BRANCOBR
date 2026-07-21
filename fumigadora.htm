@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRANCO - Fumigadora de Cañón BR2T-14L</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--naranja:#ff6600;--negro:#111111;--gris:#f7f5f2;--texto:#333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overflow-x:hidden;}
+
+/* ======= NAV REGRESAR ======= */
+.nav-back{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;z-index:1000;background:rgba(17,17,17,0.95);border-bottom:1px solid rgba(255,255,255,0.1);}
+.btn-back{color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px;transition:color 0.2s;}
+.btn-back:hover{color:var(--naranja);}
+.nav-logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:5px;text-decoration:none;}
+
+/* ======= DETALLE DE PRODUCTO ======= */
+.product-detail-section{display:grid;grid-template-columns:1fr 1fr;background:var(--negro);min-height:90vh;padding-top:70px;}
+
+/* Lado Imagen */
+.product-visual{position:relative;background:#0d1f35;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-visual::before{content:'';position:absolute;inset:0;background:url('imagen/reemplazar1.jpg') center/cover;opacity:0.15;}
+.product-visual img{position:relative;z-index:2;width:80%;max-width:480px;filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));}
+
+.hero-eyebrow{position:absolute;top:40px;left:60px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--naranja);font-weight:600;display:flex;align-items:center;gap:10px;z-index:3;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--naranja);}
+
+/* Lado Texto */
+.product-info-box{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(to right, #111, #161616);}
+.product-title{font-family:'Oswald',sans-serif;font-size:54px;font-weight:700;line-height:1.1;color:#fff;text-transform:uppercase;margin-bottom:15px;}
+.product-title span{color:var(--naranja);}
+.stock-status{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:30px;}
+
+/* Tabs */
+.tab-btns{display:flex;gap:30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:25px;}
+.tab-btns button{background:none;border:none;color:rgba(255,255,255,0.5);font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding-bottom:12px;cursor:pointer;transition:0.3s;}
+.tab-btns button.active{color:var(--naranja);border-bottom:2px solid var(--naranja);}
+
+.tab-pane{display:none;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.8;}
+.tab-pane.active{display:block;}
+
+.specs-list{list-style:none;}
+.spec-cat-title{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:18px 0 6px 0;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,0.15);}
+.spec-cat-title:first-child{margin-top:0;}
+.spec-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.spec-item span:first-child{color:var(--naranja);font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.spec-item span:last-child{color:#fff;font-size:13px;text-align:right;}
+
+/* Colores disponibles */
+.color-options{display:flex;gap:15px;margin-top:15px;align-items:center;}
+.color-circle{width:22px;height:22px;border-radius:50%;display:inline-block;border:2px solid rgba(255,255,255,0.2);}
+
+/* ======= SECCIONES HOME (REUTILIZADAS) ======= */
+.section{padding:90px 60px;}
+.sec-head{text-align:center;margin-bottom:60px;}
+.sec-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:600;margin-bottom:10px;}
+.sec-title{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;letter-spacing:-0.5px;color:var(--negro);text-transform:uppercase;}
+.sec-desc{font-size:14px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
+
+/* PRODUCTOS */
+.prods-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;}
+.prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;}
+.prod-img-box{height:280px;display:flex;align-items:center;justify-content:center;background:#f5f5f5;}
+.prod-img-box img{width:100%;height:100%;object-fit:cover;transition:0.6s;}
+.prod-card:hover .prod-img-box img{transform:scale(1.08);}
+.prod-info{padding:20px;}
+.prod-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;text-transform:uppercase;}
+
+/* POR QUÉ ELEGIRNOS */
+.why-section{background:var(--negro);padding:90px 60px;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
+.why-card{background:#161616;padding:30px;border:1px solid rgba(255,255,255,0.05);}
+.why-ico{width:40px;height:40px;background:var(--naranja);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-weight:bold;color:#fff;}
+.why-ttl{font-family:'Oswald',sans-serif;font-size:16px;color:#fff;text-transform:uppercase;margin-bottom:10px;letter-spacing:1px;}
+.why-txt{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;}
+
+/* FOOTER ORIGINAL */
+.footer{background:#0d0d0d;padding:60px 60px 30px;color:#fff;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.f-brand{font-family:'Oswald',sans-serif;font-size:24px;letter-spacing:5px;margin-bottom:15px;}
+.f-desc{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.8;}
+.f-list{list-style:none;margin-top:15px;}
+.f-list a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;}
+
+@media(max-width:900px){
+    .product-detail-section{grid-template-columns:1fr;}
+    .product-visual{height:400px;}
+    .prods-wrap, .why-grid, .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav-back">
+    <a href="index.html" class="btn-back">← Volver al Inicio</a>
+    <a href="index.html" class="nav-logo">BRANCO</a>
+</nav>
+
+<section class="product-detail-section">
+    <div class="product-visual">
+        <div class="hero-eyebrow">Industria Brasilera</div>
+        <img src="imagen/fumigadora.png" alt="Fumigadora de Cañón Bora BR2T-14L">
+    </div>
+
+    <div class="product-info-box">
+        <h1 class="product-title">FUMIGADORA DE CAÑÓN<br><span>BR2T-14L</span></h1>
+        <div class="stock-status">Bora — Potencia que protege, eficiencia que rinde</div>
+
+        <div class="tabs">
+            <div class="tab-btns">
+                <button class="active" onclick="openTab(event, 'desc')">Descripción</button>
+                <button onclick="openTab(event, 'specs')">Especificaciones</button>
+                <button onclick="openTab(event, 'apps')">Aplicaciones</button>
+            </div>
+
+            <div id="desc" class="tab-pane active">
+                <p>La fumigadora de cañón de alto rendimiento Bora BR2T-14L ofrece potencia y alcance superior para trabajos intensivos. Diseñada ergonómicamente para garantizar comodidad durante largas jornadas de trabajo.</p>
+                <p style="margin-top:15px;">Cuenta con un alcance horizontal de hasta 14 metros y vertical de hasta 10 metros, ideal para coberturas eficientes en diversos campos de trabajo.</p>
+                
+                <div style="margin-top:20px;">
+                    <span style="color:var(--naranja); font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:8px;">Colores Disponibles:</span>
+                    <div class="color-options">
+                        <span class="color-circle" style="background:#ff6600;" title="Naranja"></span>
+                        <span class="color-circle" style="background:#e50914;" title="Rojo"></span>
+                        <span class="color-circle" style="background:#888888;" title="Gris"></span>
+                        <span class="color-circle" style="background:#0055ff;" title="Azul"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="specs" class="tab-pane">
+                <div class="specs-list">
+                    <div class="spec-cat-title">Especificaciones del Motor</div>
+                    <div class="spec-item"><span>Tipo de Motor</span><span>Monocilíndrico, 2T (Refrigerado por aire)</span></div>
+                    <div class="spec-item"><span>Potencia Máxima</span><span>3.5 HP</span></div>
+                    <div class="spec-item"><span>Cilindrada</span><span>56.5 cc</span></div>
+                    <div class="spec-item"><span>Velocidad Máxima</span><span>7,500 - 8,000 RPM</span></div>
+
+                    <div class="spec-cat-title">Combustible y Arranque</div>
+                    <div class="spec-item"><span>Sistema de Arranque</span><span>Retráctil (Manual por cuerda)</span></div>
+                    <div class="spec-item"><span>Tipo de Combustible</span><span>Mezcla de Gasolina y Aceite</span></div>
+                    <div class="spec-item"><span>Relación de Mezcla</span><span>25:1</span></div>
+                    <div class="spec-item"><span>Tanque de Combustible</span><span>1.8 Litros</span></div>
+
+                    <div class="spec-cat-title">Rendimiento y Aplicación</div>
+                    <div class="spec-item"><span>Alcance Horizontal Máx.</span><span>14 metros</span></div>
+                    <div class="spec-item"><span>Alcance Vertical Máx.</span><span>8 - 10 metros</span></div>
+                    <div class="spec-item"><span>Volumen de Descarga</span><span>2.5 Litros/minuto</span></div>
+                    <div class="spec-item"><span>Tanque Químico</span><span>14 Litros</span></div>
+
+                    <div class="spec-cat-title">Dimensiones y Peso</div>
+                    <div class="spec-item"><span>Peso en Seco</span><span>8.0 kg</span></div>
+                    <div class="spec-item"><span>Dimensiones Generales</span><span>500 x 440 x 680 mm</span></div>
+                </div>
+            </div>
+
+            <div id="apps" class="tab-pane">
+                <div class="specs-list">
+                    <div class="spec-item"><span>Agricultura</span><span>Control de plagas en cultivos, frutales y hortalizas.</span></div>
+                    <div class="spec-item"><span>Ganadería</span><span>Desinfección de establos, corrales y control de insectos.</span></div>
+                    <div class="spec-item"><span>Salud Pública</span><span>Control de vectores (mosquitos) en áreas urbanas/rurales.</span></div>
+                    <div class="spec-item"><span>Silvicultura</span><span>Protección de bosques y control de plagas forestales.</span></div>
+                    <div class="spec-item"><span>Invernaderos</span><span>Aplicación de fitosanitarios y nutrientes bajo cubierta.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-section">
+    <div class="sec-head">
+        <div class="sec-tag">Características Destacadas</div>
+        <h2 class="sec-title" style="color:#fff;">Rendimiento y Durabilidad</h2>
+        <p class="sec-desc" style="color:rgba(255,255,255,0.4);">Tecnología brasilera diseñada para uso profesional intensivo.</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-ico">✓</div>
+            <div class="why-ttl">Alcance Superior</div>
+            <p class="why-txt">Cubre hasta 14 m horizontales y de 8 a 10 m verticales para una aplicación uniforme.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-ico">★</div>
+            <div class="why-ttl">Motor 2 Tiempos</div>
+            <p class="why-txt">Alto rendimiento con bajo consumo de combustible y máxima potencia de trabajo.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-ico">⚙</div>
+            <div class="why-ttl">Diseño Ergonómico</div>
+            <p class="why-txt">Diseño cómodo para reducir la fatiga en largas jornadas laborales de fumigación.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="sec-head">
+        <div class="sec-tag">Catálogo</div>
+        <h2 class="sec-title">Otros Productos</h2>
+    </div>
+    <div class="prods-wrap">
+        <a href="bomba1.html" class="prod-card">
+            <div class="prod-img-box"><img src="imagen/bomba1.png" alt="WP 20"></div>
+            <div class="prod-info"><div class="prod-name">WP 20</div></div>
+        </a>
+        <a href="bomba2.html" class="prod-card">
+            <div class="prod-img-box"><img src="imagen/mc1.png" alt="WP 20H"></div>
+            <div class="prod-info"><div class="prod-name">WP 20H</div></div>
+        </a>
+        <a href="bomba3.html" class="prod-card">
+            <div class="prod-img-box"><img src="imagen/bomba3.png" alt="WP 30"></div>
+            <div class="prod-info"><div class="prod-name">WP 30</div></div>
+        </a>
+        <a href="tienda.html" class="prod-card" style="background:var(--naranja); color:#fff; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div class="prod-info">
+                <div class="prod-name" style="font-size:20px;">Ver Toda la Tienda →</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div>
+            <div class="f-brand">BRANCO</div>
+            <p class="f-desc">Distribuidores oficiales de motobombas y equipos agrícolas BRANCO y Bora. Tecnología brasilera de alto rendimiento.</p>
+        </div>
+        <div>
+            <div style="font-size:10px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.6);">NAVEGACIÓN</div>
+            <ul class="f-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </div>
+        <div>
+            <div style="font-size:10px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.6);">CONTACTO</div>
+            <div class="f-desc" style="margin-top:15px;">tecnobrbranco@gmail.com</div>
+        </div>
+    </div>
+    <div style="border-top:1px solid #1c1c1c; margin-top:40px; padding-top:20px; font-size:11px; color:rgba(255,255,255,0.2);">
+        © 2026 <span>BRANCO</span> — Tecnología Brasilera
+    </div>
+</footer>
+
+<script>
+function openTab(evt, tabName) {
+    let contents = document.querySelectorAll(".tab-pane");
+    let buttons = document.querySelectorAll(".tab-btns button");
+    contents.forEach(c => c.classList.remove("active"));
+    buttons.forEach(b => b.classList.remove("active"));
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
