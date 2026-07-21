@@ -67,7 +67,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 .sec-desc{font-size:14px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
 /* ======= PRODUCTOS GRID ======= */
-.prods-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;}
+.prods-wrap{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1px;background:#e0e0e0;}
 .prod-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;}
 .prod-img-box{height:280px;overflow:hidden;background:#f5f5f5;position:relative;display:flex;align-items:center;justify-content:center;}
 .prod-img-box img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
@@ -144,7 +144,6 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   .strip{flex-wrap:wrap;}
   .strip-item{padding:12px 20px; width:50%; border-right:none; justify-content:center;}
   .section{padding:60px 20px;}
-  .prods-wrap{grid-template-columns:1fr 1fr;}
   .about-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
@@ -156,7 +155,6 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   .hero-btns{flex-direction:column;}
   .btn-fill, .btn-outline{width:100%; text-align:center;}
   .strip-item{width:100%; border-bottom:1px solid rgba(255,255,255,0.1);}
-  .prods-wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .footer-bot{flex-direction:column; gap:10px; text-align:center;}
@@ -189,7 +187,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><span id="h-tag">Tecnología Brasilera</span></div>
-    <h1 id="h-title">MOTOBOMBAS<br><span>BRANCO</span></h1>
+    <h1 id="h-title">MOTOBOMBAS Y<br>EQUIPOS <span>BRANCO</span></h1>
     <p class="hero-sub" id="h-sub">Equipos de alto rendimiento diseñados para ofrecer máxima eficiencia, durabilidad y potencia en cualquier entorno. Para garantizar la calidad de nuestros productos, estos cuentan con sello seco de fábrica.</p>
     <div class="hero-btns">
       <a href="tienda.html" class="btn-fill" id="h-btn1">Ver Productos</a>
@@ -202,7 +200,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
     <div class="dot" data-i="2"></div>
   </div>
   <div class="hero-stat">
-    <div class="stat-item"><span class="stat-num">4</span><div class="stat-label" id="hs-prod">Productos</div></div>
+    <div class="stat-item"><span class="stat-num">5</span><div class="stat-label" id="hs-prod">Productos</div></div>
     <div class="stat-item"><span class="stat-num">100%</span><div class="stat-label" id="hs-cal">Calidad</div></div>
   </div>
 </section>
@@ -216,7 +214,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   <div class="sec-head" style="padding:0 60px;">
     <div class="sec-tag" id="pt-tag">Catálogo</div>
     <h2 class="sec-title" id="pt-title">Nuestros Productos</h2>
-    <p class="sec-desc" id="pt-desc">Soluciones de bombeo de alto rendimiento para agricultura, construcción y uso doméstico.</p>
+    <p class="sec-desc" id="pt-desc">Soluciones de bombeo y fumigación de alto rendimiento para agricultura, construcción y uso profesional.</p>
   </div>
   <div class="prods-wrap">
     <a href="bomba1.html" class="prod-card">
@@ -250,6 +248,14 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
       <div class="prod-info">
         <div class="prod-name">WP 30H</div>
         <div class="prod-desc" id="pc4-d">Motobomba 3 pulgadas alta presión</div>
+      </div>
+    </a>
+    <a href="fumigadora.html" class="prod-card">
+      <div class="prod-img-box"><img src="imagen/fumigadora.png" alt="Fumigadora BR2T-14L"></div>
+      <div class="prod-hover"><div class="prod-cta">Ver Detalles</div></div>
+      <div class="prod-info">
+        <div class="prod-name">BR2T-14L</div>
+        <div class="prod-desc" id="pc5-d">Fumigadora de cañón 3.5 HP 14L</div>
         <div class="prod-badge" id="pc-nuevo">Nuevo</div>
       </div>
     </a>
@@ -268,9 +274,9 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
     <div class="sec-tag" id="ab-tag">Quiénes somos</div>
     <h2 id="ab-title">Tecnología Brasilera de Alto Rendimiento</h2>
     <p id="ab-p1">Equipos BRANCO diseñados para ofrecer máxima eficiencia, durabilidad y rendimiento en cualquier entorno. Cada producto pasa por rigurosos controles de calidad antes de llegar a nuestros clientes.</p>
-    <p id="ab-p2">Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo confiables para agricultura, construcción y uso doméstico.</p>
+    <p id="ab-p2">Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo y fumigación confiables para agricultura, construcción y uso doméstico.</p>
     <div class="stats-row">
-      <div class="stat-box"><div class="stat-box-num">4+</div><div class="stat-box-label" id="sb1">Modelos disponibles</div></div>
+      <div class="stat-box"><div class="stat-box-num">5+</div><div class="stat-box-label" id="sb1">Modelos disponibles</div></div>
       <div class="stat-box"><div class="stat-box-num">100%</div><div class="stat-box-label" id="sb2">Calidad garantizada</div></div>
     </div>
   </div>
@@ -291,7 +297,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
 <section class="cta-band">
   <h2 id="cta-t">¡No Esperes Más!</h2>
   <p id="cta-d">Descubre nuestra tienda online y lleva tu trabajo al siguiente nivel.</p>
-  <p id="cta-d">UN AÑO DE GARANTÍA REAL EN BOLIVIA</p>
+  <p id="cta-d2">UN AÑO DE GARANTÍA REAL EN BOLIVIA</p>
   <a href="tienda.html" class="btn-white" id="cta-btn">Ver Tienda</a>
 </section>
 
@@ -299,7 +305,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
   <div class="footer-top">
     <div>
       <div class="f-brand">BRANCO</div>
-      <p class="f-desc" id="fd-desc">Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.</p>
+      <p class="f-desc" id="fd-desc">Distribuidores oficiales de motobombas y equipos agrícolas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.</p>
     </div>
     <div>
       <div class="f-title" id="fn-nav">Navegación</div>
@@ -317,6 +323,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--texto);overf
         <li><a href="bomba2.html">WP 20H</a></li>
         <li><a href="bomba3.html">WP 30</a></li>
         <li><a href="bomba4.html">WP 30H</a></li>
+        <li><a href="fumigadora.html">BR2T-14L</a></li>
       </ul>
     </div>
     <div>
@@ -355,46 +362,46 @@ dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.i)));
 const translations={
   es:{
     'nav-inicio':'Inicio','nav-tienda':'Tienda','nav-contacto':'Contactos','nav-acerca':'Acerca de nosotros',
-    'h-tag':'Tecnología Brasilera','h-title':'MOTOBOMBAS<br><span>BRANCO</span>',
+    'h-tag':'Tecnología Brasilera','h-title':'MOTOBOMBAS Y<br>EQUIPOS <span>BRANCO</span>',
     'h-sub':'Equipos de alto rendimiento diseñados para ofrecer máxima eficiencia, durabilidad y potencia en cualquier entorno. Para garantizar la calidad de nuestros productos, estos cuentan con sello seco de fábrica.',
     'h-btn1':'Ver Productos','h-btn2':'Nosotros',
     'hs-prod':'Productos','hs-cal':'Calidad',
     's1':'Calidad Garantizada','s4':'Asesoría Experta',
-    'pt-tag':'Catálogo','pt-title':'Nuestros Productos','pt-desc':'Soluciones de bombeo de alto rendimiento para agricultura, construcción y uso doméstico.',
-    'pc-btn':'Ver Detalles','pc1-d':'Motobomba 2 pulgadas alta presión','pc2-d':'Motobomba 2 pulgadas alta presión','pc3-d':'Motobomba 3 pulgadas alta presión','pc4-d':'Motobomba 3 pulgadas alta presión','pc-badge':'Más vendido','pc-nuevo':'Nuevo',
+    'pt-tag':'Catálogo','pt-title':'Nuestros Productos','pt-desc':'Soluciones de bombeo y fumigación de alto rendimiento para agricultura, construcción y uso profesional.',
+    'pc-btn':'Ver Detalles','pc1-d':'Motobomba 2 pulgadas alta presión','pc2-d':'Motobomba 2 pulgadas alta presión','pc3-d':'Motobomba 3 pulgadas alta presión','pc4-d':'Motobomba 3 pulgadas alta presión','pc5-d':'Fumigadora de cañón 3.5 HP 14L','pc-badge':'Más vendido','pc-nuevo':'Nuevo',
     'av-tag':'Desde Brasil','av-sub':'Alto Rendimiento',
     'ab-tag':'Quiénes somos','ab-title':'Tecnología Brasilera de Alto Rendimiento',
     'ab-p1':'Equipos BRANCO diseñados para ofrecer máxima eficiencia, durabilidad y rendimiento en cualquier entorno. Cada producto pasa por rigurosos controles de calidad antes de llegar a nuestros clientes.',
-    'ab-p2':'Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo confiables para agricultura, construcción y uso doméstico.',
+    'ab-p2':'Somos distribuidores oficiales, comprometidos con brindar soluciones de bombeo y fumigación confiables para agricultura, construcción y uso doméstico.',
     'sb1':'Modelos disponibles','sb2':'Calidad garantizada',
     'why-tag':'Por qué elegirnos','why-title':'Compromiso con la Excelencia','why-desc':'Todo lo que necesitas en un solo lugar, respaldado por tecnología brasilera.',
     'w1t':'Calidad Garantizada','w1d':'Productos respaldados por las mejores marcas del mercado, garantizando durabilidad y eficiencia.',
     'w2t':'Asesoría Experta','w2d':'Nuestro equipo de profesionales te ayuda a elegir el equipo adecuado para tus necesidades específicas.',
     'cta-t':'¡No Esperes Más!','cta-d':'Descubre nuestra tienda online y lleva tu trabajo al siguiente nivel.','cta-btn':'Ver Tienda',
-    'fd-desc':'Distribuidores oficiales de motobombas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.',
+    'fd-desc':'Distribuidores oficiales de motobombas y equipos agrícolas BRANCO. Tecnología brasilera de alto rendimiento para cada necesidad.',
     'fn-nav':'Navegación','fn-prod':'Productos','fn-contact':'Contacto',
     'fl-inicio':'Inicio','fl-tienda':'Tienda','fl-contacto':'Contactos','fl-acerca':'Acerca de nosotros',
     'fc-slogan':'Tecnología Brasilera'
   },
   pt:{
     'nav-inicio':'Início','nav-tienda':'Loja','nav-contacto':'Contato','nav-acerca':'Sobre nós',
-    'h-tag':'Tecnologia Brasileira','h-title':'MOTOBOMBAS<br><span>BRANCO</span>',
+    'h-tag':'Tecnologia Brasileira','h-title':'MOTOBOMBAS E<br>EQUIPAMENTOS <span>BRANCO</span>',
     'h-sub':'Equipamentos de alto desempenho projetados para oferecer máxima eficiência, durabilidade e potência em qualquer ambiente. Para garantir a qualidade dos nossos produtos, eles contam com selo seco de fábrica.',
     'h-btn1':'Ver Produtos','h-btn2':'Sobre nós',
     'hs-prod':'Produtos','hs-cal':'Qualidade',
     's1':'Qualidade Garantida','s4':'Assessoria Especializada',
-    'pt-tag':'Catálogo','pt-title':'Nossos Produtos','pt-desc':'Soluções de bombeamento de alto desempenho para agricultura, construção e uso doméstico.',
-    'pc-btn':'Ver Detalhes','pc1-d':'Motobomba 2 polegadas','pc2-d':'Motobomba 2 polegadas alta pressão','pc3-d':'Motobomba 3 polegadas alta pressão','pc4-d':'Motobomba 3 polegadas alta pressão','pc-badge':'Mais vendido','pc-nuevo':'Novo',
+    'pt-tag':'Catálogo','pt-title':'Nossos Produtos','pt-desc':'Soluções de bombeamento e pulverização de alto desempenho para agricultura, construção e uso profissional.',
+    'pc-btn':'Ver Detalhes','pc1-d':'Motobomba 2 polegadas alta pressão','pc2-d':'Motobomba 2 polegadas alta pressão','pc3-d':'Motobomba 3 polegadas alta pressão','pc4-d':'Motobomba 3 polegadas alta pressão','pc5-d':'Atomizador costal 3.5 HP 14L','pc-badge':'Mais vendido','pc-nuevo':'Novo',
     'av-tag':'Do Brasil','av-sub':'Alto Desempenho',
     'ab-tag':'Quem somos','ab-title':'Tecnologia Brasileira de Alto Desempenho',
     'ab-p1':'Equipamentos BRANCO projetados para oferecer máxima eficiência, durabilidade e desempenho em qualquer ambiente. Cada produto passa por rigorosos controles de qualidade.',
-    'ab-p2':'Somos distribuidores oficiais, comprometidos em fornecer soluções de bombeamento confiáveis para agricultura, construção e uso doméstico.',
+    'ab-p2':'Somos distribuidores oficiais, comprometidos em fornecer soluções de bombeamento e pulverização confiáveis para agricultura, construção e uso doméstico.',
     'sb1':'Modelos disponíveis','sb2':'Qualidade garantida',
     'why-tag':'Por que nos escolher','why-title':'Compromisso com a Excelência','why-desc':'Tudo que você precisa em um só lugar, respaldado por tecnologia brasileira.',
-    'w1t':'Qualidade Garantida','w1d':'Productos respaldados por las mejores marcas del mercado, garantizando durabilidad y eficiencia.',
-    'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ayuda a elegir el equipo cierto para sus necesidades.',
+    'w1t':'Qualidade Garantida','w1d':'Produtos respaldados pelas melhores marcas do mercado, garantindo durabilidade e eficiência.',
+    'w2t':'Assessoria Especializada','w2d':'Nossa equipe de profissionais te ajuda a escolher o equipamento certo para suas necessidades.',
     'cta-t':'Não Espere Mais!','cta-d':'Visite nossa loja online e leve seu trabalho ao próximo nível.','cta-btn':'Ver Loja',
-    'fd-desc':'Distribuidores oficiais de motobombas BRANCO. Tecnologia brasileira de alto desempenho para cada necessidade.',
+    'fd-desc':'Distribuidores oficiais de motobombas e equipamentos agrícolas BRANCO. Tecnologia brasileira de alto desempenho para cada necessidade.',
     'fn-nav':'Navegação','fn-prod':'Produtos','fn-contact':'Contato',
     'fl-inicio':'Início','fl-tienda':'Loja','fl-contacto':'Contato','fl-acerca':'Sobre nós',
     'fc-slogan':'Tecnologia Brasileira'
